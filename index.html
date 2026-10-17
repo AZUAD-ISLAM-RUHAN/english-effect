@@ -17,17 +17,6 @@
 
 <main>
   <section class="hero" id="hero">
-    <svg class="sky" id="sky" aria-hidden="true">
-      <path id="route" class="route" d=""/>
-      <path id="trail" class="trail" d=""/>
-      <g id="origin"><circle class="pin-ring" r="11"/><circle class="pin" r="4.5"/><text class="pin-text" x="16" y="5">DAC</text></g>
-      <g id="plane"><g class="plane-body" transform="scale(1.25)">
-        <path d="M-24,-2.6 L14,-3.2 Q25,-3 27,0 Q25,3 14,3.2 L-24,2.6 Q-27,0 -24,-2.6 Z"/>
-        <path d="M3,-2.8 L-9,-21 L-3.5,-21 L12,-2.8 Z"/><path d="M3,2.8 L-9,21 L-3.5,21 L12,2.8 Z"/>
-        <path d="M-17,-2.4 L-24,-10 L-20.5,-10 L-13,-2.4 Z"/><path d="M-17,2.4 L-24,10 L-20.5,10 L-13,2.4 Z"/>
-      </g></g>
-    </svg>
-
     <div class="wrap hero-grid">
       <div class="hero-text">
         <ul class="creds rise" aria-label="Instructor credentials">
@@ -42,22 +31,13 @@
         </div>
       </div>
 
-      <aside class="pass" aria-label="Free live class">
-        <div class="pass-top"><span class="pass-brand">English Effect</span><span class="pass-kind">Free Live Class</span></div>
-        <div class="pass-route">
-          <div><span class="pass-code">DAC</span><span class="pass-city">Dhaka</span></div>
-          <span class="pass-line" aria-hidden="true"></span>
-          <div class="pass-dest"><span class="pass-code" id="destCode">LHR</span><span class="pass-city" id="destCity">London</span></div>
+      <!-- Interactive globe: Dhaka theke flight. Script: assets/js/globe.js -->
+      <div class="globe-wrap">
+        <div class="globe" id="globe" role="img" aria-label="Globe showing flights from Dhaka to London, Sydney, Toronto, Dublin, Melbourne and Auckland">
+          <div class="globe-label"><span>Now landing</span><b>LHR · London</b></div>
         </div>
-        <dl class="pass-info">
-          <div><dt>Day</dt><dd>Every Friday</dd></div>
-          <div><dt>Boarding</dt><dd>9:00 PM</dd></div>
-          <div><dt>Gate</dt><dd>WhatsApp</dd></div>
-          <div><dt>Fare</dt><dd>Free</dd></div>
-        </dl>
-        <div class="pass-tear" aria-hidden="true"></div>
-        <a href="free-class.html" class="pass-cta">Get your seat</a>
-      </aside>
+        <p class="globe-hint">Drag to spin the globe</p>
+      </div>
     </div>
   </section>
 
@@ -215,5 +195,6 @@
 <div id="site-footer"></div>
 <script src="assets/js/credentials.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/globe.js"></script>
 </body>
 </html>

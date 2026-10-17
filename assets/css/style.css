@@ -643,9 +643,9 @@ tbody tr:last-child > * { border-bottom: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .pre { opacity: 1; transform: none; }
-  .course:hover, .feature:hover, .task:hover, .contact:hover, .cred:hover, .cred-thumb:hover, .cred:hover .cred-img img, .cred-view:hover svg { transform: none; }
+  /* keep gentle fades, remove movement */
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-property: opacity, color, background-color, border-color, box-shadow !important; }
+  .pre { transform: none; }
   .meter-fill { transform: none; }
 }
 
@@ -767,4 +767,29 @@ kbd { font: 700 .78rem var(--font); padding: .15rem .45rem; border-radius: 6px; 
   .tile { width: 54px; height: 54px; font-size: 1.5rem; }
   .kb span { width: 28px; height: 28px; font-size: .7rem; }
   .float-tiles span { width: 50px; height: 50px; font-size: 1.4rem; }
+}
+
+/* ---------- Interactive globe (home hero) ---------- */
+.hero-grid { padding-block: 4rem 5rem; }
+@media (max-width: 960px) { .hero-grid { padding-block: 3rem 3.5rem; } }
+.globe-wrap { position: relative; justify-self: end; width: 100%; max-width: 520px; }
+.globe { position: relative; width: 100%; max-width: 100%; aspect-ratio: 1; cursor: grab; animation: globeIn 1.4s .2s var(--ease) both; }
+.globe.grabbing { cursor: grabbing; }
+.globe canvas { display: block; width: 100%; height: 100%; }
+@keyframes globeIn { from { opacity: 0; transform: scale(.85) rotate(-8deg); } to { opacity: 1; transform: none; } }
+.globe-label {
+  position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: .6rem; white-space: nowrap;
+  padding: .55rem 1rem .55rem .7rem; border-radius: 999px;
+  background: rgba(15,42,51,.75); border: 1px solid rgba(141,198,63,.35);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--white); font-size: .85rem; pointer-events: none;
+}
+.globe-label::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 4px rgba(255,212,59,.25); }
+.globe-label span { color: rgba(255,255,255,.65); font-weight: 600; }
+.globe-label b { font-weight: 800; transition: opacity .25s, transform .25s var(--ease); }
+.globe-label.swap b { opacity: 0; transform: translateY(-5px); }
+.globe-hint { margin-top: .4rem; text-align: center; font-size: .78rem; color: rgba(255,255,255,.5); }
+@media (max-width: 960px) {
+  .globe-wrap { justify-self: center; max-width: 420px; margin-top: -1rem; }
 }
