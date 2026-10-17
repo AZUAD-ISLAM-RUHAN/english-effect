@@ -13,7 +13,7 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   - The header and footer HTML live ONLY in main.js. Every page has
     `<div id="site-header"></div>` and `<div id="site-footer"></div>` placeholders.
   - The `SITE` object at the top of main.js holds every phone number and link
-    (bKash, Nagad, WhatsApp, Facebook, YouTube, email). Change them there only.
+    (bKash, Nagad, bank account, WhatsApp, Facebook, YouTube, email). Change them there only.
   - Each page sets `<body data-page="...">` so the right menu item is highlighted.
 - `assets/js/typing.js`: typing speed test. `assets/js/kids-game.js`: kids spelling game.
 - `assets/images/`: logo.png (for light backgrounds), logo-light.png (for dark), favicon.png.
@@ -35,8 +35,8 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   and the content, then add it to the menu/footer in main.js.
 
 ## Still to fill in (search the project for "TODO")
-Course prices and durations, bKash/Nagad/WhatsApp numbers, WhatsApp group link,
-Facebook link, FAQ answers, Nirob's photo and bio, kids course parent info.
+Course prices and durations, WhatsApp number, WhatsApp group link,
+two FAQ answers (verify time, exam registration), kids course parent info.
 
 ## Run and deploy
 - Local: open the folder in VS Code, right-click index.html, "Open with Live Server".

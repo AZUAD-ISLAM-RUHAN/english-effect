@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Enroll | English Effect</title>
-  <meta name="description" content="Enroll in an English Effect course with bKash or Nagad.">
+  <meta name="description" content="Enroll in an English Effect course with bKash, Nagad or bank transfer.">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <div class="wrap">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Enroll</span></nav>
       <h1>Enroll in four steps</h1>
-      <p class="bn">কার্ড বা অনলাইন ব্যাংকিং লাগবে না। bKash বা Nagad এ ফি পাঠিয়ে ফর্মটা পূরণ করুন।</p>
+      <p class="bn">কার্ড লাগবে না। bKash বা Nagad এ ফি পাঠিয়ে ফর্মটা পূরণ করুন। বিদেশ থেকে ব্যাংক ট্রান্সফারও করা যায়।</p>
       
     </div>
   </section>
@@ -33,15 +33,22 @@
         <h2 class="h2" data-reveal>How it works</h2>
         <ol class="steps">
           <li data-reveal><h3>Choose a course</h3><p class="bn">কোর্স পেজ থেকে ফি আর সময় দেখে কোর্স ঠিক করুন।</p></li>
-          <li data-reveal><h3>Send Money</h3><p class="bn">নিচের যেকোনো নম্বরে কোর্স ফি <b>Send Money</b> করুন।</p>
-            <div class="pay"><span>bKash</span><b data-site="bkash">01XXX-XXXXXX</b><button type="button" class="copy-btn">Copy</button></div>
-            <div class="pay"><span>Nagad</span><b data-site="nagad">01XXX-XXXXXX</b><button type="button" class="copy-btn">Copy</button></div>
+          <li data-reveal><h3>Pay the fee</h3><p class="bn">নিচের যেকোনো নম্বরে কোর্স ফি <b>Send Money</b> করুন। দেশের বাইরে থেকে হলে ব্যাংক ট্রান্সফার করুন।</p>
+            <div class="pay"><span>bKash</span><b data-site="bkash">01734-370414</b><button type="button" class="copy-btn">Copy</button></div>
+            <div class="pay"><span>Nagad</span><b data-site="nagad">01647-637157</b><button type="button" class="copy-btn">Copy</button></div>
+            <p class="bn pay-head">Bank transfer (দেশের বাইরে থেকে পেমেন্টের জন্য)</p>
+            <div class="pay"><span>Bank</span><b data-site="bankName">Trust Bank PLC</b></div>
+            <div class="pay"><span>Account type</span><b data-site="bankType">Mudaraba Savings Account</b></div>
+            <div class="pay"><span>A/C Name</span><b data-site="bankAccName">ALI JAKER NIROB</b><button type="button" class="copy-btn">Copy</button></div>
+            <div class="pay"><span>Account No</span><b data-site="bankAccNo">7028-0311016589</b><button type="button" class="copy-btn">Copy</button></div>
+            <p class="pay-note">Account No can also be written as <span data-site="bankAccNoAlt">728-0311016589</span></p>
+            <div class="pay"><span>Branch</span><b data-site="bankBranch">Mirpur Branch</b></div>
+            <div class="pay"><span>Routing No</span><b data-site="bankRouting">240262987</b><button type="button" class="copy-btn">Copy</button></div>
           </li>
           <li data-reveal><h3>Fill in the form</h3><p class="bn">নাম, ফোন নম্বর আর Transaction ID দিয়ে ফর্ম জমা দিন।</p></li>
           <li data-reveal><h3>Join your class</h3><p class="bn">পেমেন্ট মিলিয়ে WhatsApp এ যোগাযোগ করে আপনাকে ক্লাস গ্রুপে যুক্ত করা হবে।</p></li>
         </ol>
-        <!-- TODO: bidesh theke payment er upay thakle ekhane lekho -->
-        <p class="bn" style="margin-top:2rem;color:var(--muted)" data-reveal>দেশের বাইরে থেকে ভর্তি হতে চাইলে <a href="contact.html" class="link">যোগাযোগ করুন</a>।</p>
+        <p class="bn" style="margin-top:2rem;color:var(--muted)" data-reveal>দেশের বাইরে থেকে ভর্তি হতে চাইলে উপরের ব্যাংক অ্যাকাউন্টে ট্রান্সফার করে পেমেন্ট করা যায়। কোনো প্রশ্ন থাকলে <a href="contact.html" class="link">যোগাযোগ করুন</a>।</p>
       </div>
 
       <form class="form" id="enrollForm" name="enroll" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" data-reveal>
@@ -58,7 +65,7 @@
           <option>PTE Academic</option><option>IELTS</option><option>Spoken English</option><option>Kids English</option>
         </select>
         <div class="row">
-          <div><label for="f-method">Paid with</label><select id="f-method" name="method" required><option>bKash</option><option>Nagad</option></select></div>
+          <div><label for="f-method">Paid with</label><select id="f-method" name="method" required><option>bKash</option><option>Nagad</option><option>Bank transfer</option></select></div>
           <div><label for="f-trx">Transaction ID</label><input id="f-trx" name="trx" required placeholder="e.g. 9JK3LM2X"></div>
         </div>
         <button type="submit" class="btn btn-green btn-block">Submit enrollment</button>
