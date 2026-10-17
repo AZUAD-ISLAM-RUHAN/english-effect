@@ -7,7 +7,7 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 
 ## Structure
 - One HTML file per page in the root: index, courses, pte, ielts, spoken, kids, free-class,
-  instructor, games, typing, kids-game, enroll, faq, contact, thanks.
+  instructor, games, typing, kids-game, mock-test, mock, enroll, faq, contact, thanks.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.
 - `assets/js/main.js`: shared header, footer, menu, animations, countdown.
   - The header and footer HTML live ONLY in main.js. Every page has
@@ -42,6 +42,29 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 - Cards use the shared tokens in `:root` (`--card-pad`, `--card-lift`, `--card-shadow`, `--card-move`).
 - New page: copy an existing page (e.g. faq.html), change `<title>`, `data-page`
   and the content, then add it to the menu/footer in main.js.
+
+## Mock tests (demo)
+- `mock-test.html`: landing page. Free sample cards, the 30-day pass, and "Past attempts"
+  (results saved in this browser only).
+- `mock.html`: the test runner. `mock.html#ielts-sample` / `#pte-sample` runs a test,
+  `mock.html#result-<id>` shows the score and error log.
+- `assets/js/mock-data.js`: the `MOCK_TESTS` object (all questions and answers).
+- `assets/js/mock.js`: the engine (timer, answers, estimated score, error log, history in
+  `localStorage` key `ee-mock-attempts`). Listening audio is read by the browser (speechSynthesis).
+- `assets/css/mock.css`: mock test styles. Both mock pages load it after style.css.
+- Scores are rough estimates, not official. Only write our OWN questions; never copy
+  Pearson, IDP or Cambridge material.
+
+### How to add a question (mock-data.js)
+1. Find the test (e.g. `"ielts-sample"`) and the section (`reading`, `listening`, `writing`).
+2. Add an object to that section's `questions` array with a unique `id`, a `type`, a `skill`
+   label (used for the error log), `prompt`, `answer` and `explain` (why it is right):
+   - `tfng`: `answer` is `"TRUE"`, `"FALSE"` or `"NOT GIVEN"`
+   - `mcq` / `select`: `options` array, `answer` is the index of the right option (0 = first)
+   - `gap`: `answer` is an array of accepted answers (case and extra spaces are ignored)
+   - `dictation`: `answer` is the full sentence (no `prompt`)
+3. For reading, the answer must be findable in `passage`; for IELTS listening, in `script`.
+4. A whole new test: add a new key to `MOCK_TESTS` (same shape) and link to `mock.html#<key>`.
 
 ## How to add a new certificate
 1. Put the full image and a smaller copy named `<name>-thumb.jpg` (about 600px wide) in

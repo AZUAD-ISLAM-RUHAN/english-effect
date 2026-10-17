@@ -48,6 +48,7 @@ var SITE = {
             '</div></div>' +
           '<a href="free-class.html" data-nav="free">Free Class</a>' +
           '<a href="instructor.html" data-nav="instructor">Instructor</a>' +
+          '<a href="mock-test.html" data-nav="mock">Mock Test</a>' +
           '<a href="games.html" data-nav="games">Games</a>' +
           '<a href="faq.html" data-nav="faq">FAQ</a>' +
           '<a href="contact.html" data-nav="contact">Contact</a>' +
@@ -82,7 +83,7 @@ var SITE = {
   document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = "https://wa.me/" + SITE.whatsappNumber; });
 
   /* ---------- 5. Active menu item ---------- */
-  var map = { home: "home", courses: "courses", pte: "courses", ielts: "courses", spoken: "courses", kids: "courses", free: "free", instructor: "instructor", faq: "faq", contact: "contact", games: "games", typing: "games", kids_game: "games" };
+  var map = { home: "home", courses: "courses", pte: "courses", ielts: "courses", spoken: "courses", kids: "courses", free: "free", instructor: "instructor", faq: "faq", contact: "contact", games: "games", typing: "games", kids_game: "games", mock: "mock" };
   var act = document.querySelector('[data-nav="' + map[page] + '"]');
   if (act) act.classList.add("active");
 
@@ -213,7 +214,7 @@ var SITE = {
   /* ---------- 12. Enroll page: course pre-select (enroll.html#pte) + copy number ---------- */
   var sel = document.getElementById("f-course");
   if (sel) {
-    var names = { pte: "PTE Academic", ielts: "IELTS", spoken: "Spoken English", kids: "Kids English" };
+    var names = { pte: "PTE Academic", ielts: "IELTS", spoken: "Spoken English", kids: "Kids English", "mock-ielts": "IELTS Mock Test Pass (30 days)", "mock-pte": "PTE Mock Test Pass (30 days)" };
     var h = location.hash.replace("#", "");
     if (names[h]) sel.value = names[h];
   }
