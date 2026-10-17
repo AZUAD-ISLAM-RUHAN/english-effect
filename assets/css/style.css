@@ -611,7 +611,7 @@ tbody tr:last-child > * { border-bottom: 0; }
 .copy { margin-top: 3.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,.1); font-size: .85rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 
 /* back to top */
-.to-top { position: fixed; right: calc(max(20px, env(safe-area-inset-right, 0px)) + 4px); bottom: calc(20px + 56px + 12px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 48px; height: 48px; border-radius: 14px; border: 0; cursor: pointer; background: var(--green); color: var(--white); display: grid; place-items: center; box-shadow: 0 14px 28px -12px rgba(59,166,47,.9); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .3s, transform .4s var(--ease); }
+.to-top { position: fixed; right: calc(max(20px, env(safe-area-inset-right, 0px)) + 4px); bottom: calc(20px + 56px + 12px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 48px; height: 48px; border-radius: 14px; border: 0; cursor: pointer; background: var(--green); color: var(--white); display: grid; place-items: center; box-shadow: 0 14px 28px -12px rgba(59,166,47,.9); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .3s, transform .4s var(--ease), bottom .45s var(--ease); }
 .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
 .to-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -621,7 +621,7 @@ tbody tr:last-child > * { border-bottom: 0; }
   display: flex; align-items: center; justify-content: flex-end; height: 56px; border-radius: 999px;
   background: var(--green); color: var(--white); text-decoration: none;
   box-shadow: 0 16px 30px -12px rgba(59,166,47,.85), 0 2px 6px rgba(15,42,51,.18);
-  transition: transform .35s var(--ease), opacity .3s, background .2s;
+  transition: transform .35s var(--ease), opacity .3s, background .2s, bottom .45s var(--ease);
 }
 .wa-float:hover { background: var(--green-dk); }
 .wa-icon { flex: 0 0 56px; height: 56px; display: grid; place-items: center; }
@@ -645,6 +645,19 @@ tbody tr:last-child > * { border-bottom: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .wa-float.bounce { animation: none; }
+}
+/* phone install banner (install.js adds html.ee-bar-open): lift both buttons above it.
+   The banner is up to ~108px tall on a 390px phone (text wraps), so 124px keeps a gap. */
+html.ee-bar-open .wa-float { bottom: calc(20px + 124px + env(safe-area-inset-bottom, 0px)); }
+html.ee-bar-open .to-top { bottom: calc(20px + 56px + 12px + 124px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 640px) {
+  html.ee-bar-open .to-top { bottom: calc(20px + 52px + 12px + 124px + env(safe-area-inset-bottom, 0px)); }
+}
+/* header "Install app" button (shown by install.js). No room in the desktop menu between
+   861px and 1080px, so it is hidden there; the phone menu (860px and below) still has it. */
+.menu [data-install-app] { white-space: nowrap; }
+@media (min-width: 861px) and (max-width: 1080px) {
+  html.ee-can-install .menu [data-install-app] { display: none; }
 }
 
 /* scroll progress bar */

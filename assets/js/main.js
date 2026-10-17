@@ -53,6 +53,7 @@ var SITE = {
           '<a href="games.html" data-nav="games">Games</a>' +
           '<a href="faq.html" data-nav="faq">FAQ</a>' +
           '<a href="contact.html" data-nav="contact">Contact</a>' +
+          '<button type="button" class="btn btn-ghost btn-sm" data-install-app>Install app</button>' +  // install.js dekhay/lukay
           '<a href="enroll.html" class="btn btn-green btn-sm">Enroll now</a>' +
         '</nav>' +
       '</div></header>';
