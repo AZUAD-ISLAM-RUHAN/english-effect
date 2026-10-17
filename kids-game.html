@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Spell It! Kids Game | English Effect</title>
+  <meta name="description" content="A spelling game for kids learning English.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="kids_game">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero ph-kids">
+    <span class="ghost" aria-hidden="true">ABC</span>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Games</a></span><span>Spell It!</span></nav>
+      <h1>Spell It!</h1>
+      <p class="bn">ছবি দেখো, তারপর অক্ষরগুলো ঠিক ক্রমে চাপো। ভুল হলে অক্ষরটা কেঁপে উঠবে, আবার চেষ্টা করো। কিবোর্ড দিয়েও খেলা যায়।</p>
+      
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap game">
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="Level">
+          <button type="button" data-level="easy" aria-pressed="true">Easy · 3 letters</button>
+          <button type="button" data-level="medium" aria-pressed="false">Medium · 4 letters</button>
+          <button type="button" data-level="hard" aria-pressed="false">Hard · 5+ letters</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kg-top">
+          <span class="kg-chip" id="kg-round">1 / 8</span>
+          <div class="kg-progress"><i id="kg-bar"></i></div>
+          <span class="kg-chip star">★ <span id="kg-stars">0</span></span>
+        </div>
+
+        <div class="kg-stage" id="kg-stage">
+          <div class="kg-pic" id="kg-pic" aria-hidden="true"></div>
+          <p class="kg-bn bn" id="kg-bn"></p>
+          <div class="kg-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="kg-say">Hear the word</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="kg-hint">Hint</button>
+          </div>
+          <div class="kg-slots" id="kg-slots" aria-live="polite"></div>
+          <div class="kg-tiles" id="kg-tiles"></div>
+        </div>
+
+        <div class="kg-end" id="kg-end" hidden>
+          <h2>Well played!</h2>
+          <div class="kg-final-stars" id="kg-final-stars" aria-hidden="true"></div>
+          <p class="score">Stars: <span id="kg-final">0</span></p>
+          <p class="bn" id="kg-msg"></p>
+          <div class="btn-row" style="justify-content:center">
+            <button type="button" class="btn btn-green" id="kg-again">Play again</button>
+            <a href="kids.html" class="btn btn-ghost">Kids English course</a>
+          </div>
+        </div>
+
+        <div class="kg-burst" id="kg-burst" aria-hidden="true"></div>
+      </div>
+      <p class="bn" style="margin-top:1rem;color:var(--muted);font-size:.9rem;text-align:center">প্রতিটা শব্দে ৩টা পর্যন্ত তারা: একবারও ভুল না হলে ৩, Hint নিলে ১।</p>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/kids-game.js"></script>
+</body>
+</html>

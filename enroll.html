@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Enroll | English Effect</title>
+  <meta name="description" content="Enroll in an English Effect course with bKash or Nagad.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="enroll">
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero ">
+    <span class="ghost" aria-hidden="true">ENROLL</span>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Enroll</span></nav>
+      <h1>Enroll in four steps</h1>
+      <p class="bn">কার্ড বা অনলাইন ব্যাংকিং লাগবে না। bKash বা Nagad এ ফি পাঠিয়ে ফর্মটা পূরণ করুন।</p>
+      
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap enroll">
+      <div>
+        <span class="kicker" data-reveal>Payment</span>
+        <h2 class="h2" data-reveal>How it works</h2>
+        <ol class="steps">
+          <li data-reveal><h3>Choose a course</h3><p class="bn">কোর্স পেজ থেকে ফি আর সময় দেখে কোর্স ঠিক করুন।</p></li>
+          <li data-reveal><h3>Send Money</h3><p class="bn">নিচের যেকোনো নম্বরে কোর্স ফি <b>Send Money</b> করুন।</p>
+            <div class="pay"><span>bKash</span><b data-site="bkash">01XXX-XXXXXX</b><button type="button" class="copy-btn">Copy</button></div>
+            <div class="pay"><span>Nagad</span><b data-site="nagad">01XXX-XXXXXX</b><button type="button" class="copy-btn">Copy</button></div>
+          </li>
+          <li data-reveal><h3>Fill in the form</h3><p class="bn">নাম, ফোন নম্বর আর Transaction ID দিয়ে ফর্ম জমা দিন।</p></li>
+          <li data-reveal><h3>Join your class</h3><p class="bn">পেমেন্ট মিলিয়ে WhatsApp এ যোগাযোগ করে আপনাকে ক্লাস গ্রুপে যুক্ত করা হবে।</p></li>
+        </ol>
+        <!-- TODO: bidesh theke payment er upay thakle ekhane lekho -->
+        <p class="bn" style="margin-top:2rem;color:var(--muted)" data-reveal>দেশের বাইরে থেকে ভর্তি হতে চাইলে <a href="contact.html" class="link">যোগাযোগ করুন</a>।</p>
+      </div>
+
+      <form class="form" id="enrollForm" name="enroll" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html" data-reveal>
+        <input type="hidden" name="form-name" value="enroll">
+        <p class="hidden-field"><label>Leave empty <input name="bot-field"></label></p>
+        <h2>Enrollment form</h2>
+        <label for="f-name">Full name</label>
+        <input id="f-name" name="name" required autocomplete="name">
+        <label for="f-phone">Phone / WhatsApp</label>
+        <input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="01XXXXXXXXX">
+        <label for="f-course">Course</label>
+        <select id="f-course" name="course" required>
+          <option value="">Select a course</option>
+          <option>PTE Academic</option><option>IELTS</option><option>Spoken English</option><option>Kids English</option>
+        </select>
+        <div class="row">
+          <div><label for="f-method">Paid with</label><select id="f-method" name="method" required><option>bKash</option><option>Nagad</option></select></div>
+          <div><label for="f-trx">Transaction ID</label><input id="f-trx" name="trx" required placeholder="e.g. 9JK3LM2X"></div>
+        </div>
+        <button type="submit" class="btn btn-green btn-block">Submit enrollment</button>
+        <p class="form-note bn" id="formNote">জমা দেওয়ার পর পেমেন্ট মিলিয়ে WhatsApp এ যোগাযোগ করা হবে।</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
