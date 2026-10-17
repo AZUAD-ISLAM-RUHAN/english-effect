@@ -19,7 +19,7 @@ var CREDENTIALS = [
     type: "certificate",
     image: "assets/images/credentials/idp-ielts-writing-certificate.jpg", w: 864, h: 865,
     thumb: "assets/images/credentials/idp-ielts-writing-certificate-thumb.jpg", tw: 599, th: 600,
-    alt: "IDP IELTS Teacher Training certificate issued to Ali Jaker"
+    alt: "IDP IELTS Teacher Training certificate issued to Ali Jaker Nirob"
   },
   {
     id: "pearson-pte-teachers",
@@ -29,7 +29,7 @@ var CREDENTIALS = [
     type: "certificate",
     image: "assets/images/credentials/pearson-pte-teachers-certificate.jpg", w: 936, h: 841,
     thumb: "assets/images/credentials/pearson-pte-teachers-certificate-thumb.jpg", tw: 600, th: 539,
-    alt: "Pearson PTE Academic for Teachers certificate issued to Ali Jaker"
+    alt: "Pearson PTE Academic for Teachers certificate issued to Ali Jaker Nirob"
   },
   {
     id: "bup-appreciation",
@@ -39,7 +39,7 @@ var CREDENTIALS = [
     type: "photo",
     image: "assets/images/credentials/bup-appreciation.jpg", w: 920, h: 960,
     thumb: "assets/images/credentials/bup-appreciation-thumb.jpg", tw: 575, th: 600,
-    alt: "Ali Jaker receiving a Certificate of Appreciation from Bangladesh University of Professionals"
+    alt: "Ali Jaker Nirob receiving a Certificate of Appreciation from Bangladesh University of Professionals"
   }
 ];
 

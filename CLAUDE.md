@@ -1,7 +1,7 @@
 # English Effect website
 
 Static website (plain HTML, CSS, JS, no framework, no build step) for English Effect,
-an online English course business run by Ali Jaker (Pearson PTE Academic for Teachers,
+an online English course business run by Ali Jaker Nirob (Pearson PTE Academic for Teachers,
 IDP IELTS Teacher Training). Courses: PTE Academic, IELTS, Spoken English, Kids English.
 Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com. Hosting: Netlify.
 
