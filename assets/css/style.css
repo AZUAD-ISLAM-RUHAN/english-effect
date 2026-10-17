@@ -387,6 +387,8 @@ img { max-width: 100%; display: block; }
 .page-hero > .wrap > *:nth-child(2) { animation-delay: .08s; }
 .page-hero > .wrap > *:nth-child(3) { animation-delay: .16s; }
 .page-hero > .wrap > *:nth-child(4) { animation-delay: .24s; }
+.page-hero > .wrap > *:nth-child(5) { animation-delay: .32s; }
+.page-hero .hero-meta { margin-top: .7rem; font-size: .95rem; font-weight: 700; letter-spacing: .02em; color: var(--lime); }
 .ph-pte    { background: var(--dark); }
 .ph-ielts  { background: linear-gradient(135deg, #1F6E1A, var(--green)); }
 .ph-ielts .ghost { -webkit-text-stroke-color: rgba(255,255,255,.2); }

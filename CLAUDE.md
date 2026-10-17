@@ -35,8 +35,8 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   and the content, then add it to the menu/footer in main.js.
 
 ## Still to fill in (search the project for "TODO")
-Course prices and durations, WhatsApp number, WhatsApp group link,
-two FAQ answers (verify time, exam registration), kids course parent info.
+Course prices and durations (Kids duration is done), WhatsApp group link,
+two FAQ answers (verify time, exam registration).
 
 ## Run and deploy
 - Local: open the folder in VS Code, right-click index.html, "Open with Live Server".
