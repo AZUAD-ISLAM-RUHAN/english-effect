@@ -6,8 +6,8 @@
    ========================================================= */
 var SITE = {
   whatsappGroup: "https://chat.whatsapp.com/",          // TODO: Friday class er WhatsApp group invite link
-  whatsappNumber: "8801XXXXXXXXX",                       // TODO: 880 diye shuru, + chara
-  whatsappText: "01XXX-XXXXXX",                          // TODO: dekhanor jonno number
+  whatsappNumber: "8801734370414",                      // 880 diye shuru, + chara
+  whatsappText: "+880 1734-370414",                      // dekhanor jonno number
   bkash: "01734-370414",
   nagad: "01647-637157",
   bankName: "Trust Bank PLC",                            // bidesh theke payment (enroll page)
@@ -17,7 +17,7 @@ var SITE = {
   bankAccNoAlt: "728-0311016589",
   bankBranch: "Mirpur Branch",
   bankRouting: "240262987",
-  email: "ajnirob66@gmail.com",                          // TODO: confirm koro
+  email: "englisheffectbd@gmail.com",
   facebook: "https://www.facebook.com/EnglishEffectBD",
   youtube: "https://www.youtube.com/@englisheffectbd",
   domain: "englisheffectbd.com"
