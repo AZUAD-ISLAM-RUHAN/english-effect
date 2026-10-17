@@ -377,6 +377,37 @@ img { max-width: 100%; height: auto; display: block; }
 .cred-all { display: inline-flex; align-items: center; gap: .4rem; font-weight: 700; font-size: .9rem; color: var(--green-dk); text-decoration: none; }
 .cred-all svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 
+/* ---------- Packages (PTE / IELTS). Data: assets/js/courses-data.js ---------- */
+.pkg-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.2rem; }
+.pkg { position: relative; grid-column: span 3; display: flex; flex-direction: column; gap: .55rem; min-width: 0; padding: var(--card-pad); border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); transition: var(--card-move); }
+.pkg:hover { transform: var(--card-lift); border-color: var(--lime); box-shadow: var(--card-shadow); }
+.pkg-private { grid-column: span 5; }
+.pkg-full { grid-column: span 7; padding: calc(var(--card-pad) + .4rem); border: 2px solid var(--green); box-shadow: 0 28px 48px -36px rgba(59,166,47,.7); }
+.pkg-full:hover { border-color: var(--green); }
+.pkg-chip { align-self: flex-start; padding: .25rem .7rem; border-radius: 999px; background: var(--yellow); color: var(--dark); font-size: .75rem; font-weight: 800; letter-spacing: .03em; }
+.pkg h3 { font-size: 1.15rem; font-weight: 800; }
+.pkg-full h3 { font-size: 1.4rem; }
+.pkg-desc { color: var(--muted); font-size: .95rem; }
+.pkg-note { padding: .5rem .75rem; border-radius: 10px; background: var(--soft); color: var(--green-dk); font-size: .85rem; }
+.pkg-note-lg { margin: 0 0 1.2rem; font-size: .95rem; }
+.pkg-fee { margin-top: auto; padding-top: .6rem; }
+.pkg-fee b { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
+.pkg-full .pkg-fee b { font-size: 2rem; color: var(--green-dk); }
+.pkg-compare { color: var(--muted); font-size: .82rem; }
+.pkg-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.pkg-actions .btn { flex: 1 1 auto; }
+.pkg-back { margin-top: 1.6rem; }
+@media (max-width: 1080px) {
+  .pkg, .pkg-private, .pkg-full { grid-column: span 6; }
+}
+@media (max-width: 640px) {
+  .pkg-grid { grid-template-columns: 1fr; }
+  .pkg, .pkg-private, .pkg-full { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pkg:hover { transform: none; }
+}
+
 /* Lightbox */
 html.lb-open { overflow: hidden; }
 .lightbox { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(8,22,27,.94); color: var(--white); }

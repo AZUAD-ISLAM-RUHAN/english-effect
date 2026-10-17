@@ -7,7 +7,9 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 
 ## Structure
 - One HTML file per page in the root: index, courses, pte, ielts, spoken, kids, free-class,
-  instructor, games, typing, kids-game, mock-test, mock, enroll, faq, contact, thanks.
+  instructor, games, typing, kids-game, mock-test, mock, module, enroll, faq, contact, thanks.
+- `module.html`: ONE template for every PTE/IELTS package (`module.html?exam=pte&module=writing`).
+  Its content comes from `assets/js/courses-data.js` through `assets/js/packages.js`.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.
 - `assets/js/main.js`: shared header, footer, menu, animations, countdown.
   - The header and footer HTML live ONLY in main.js. Every page has
@@ -18,6 +20,11 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 - `assets/js/credentials.js`: the `CREDENTIALS` array (every certificate) plus the code that builds
   the cards on instructor.html (`data-credentials="full"`), the 3 thumbnails on index.html
   (`data-credentials="mini"`) and the lightbox. Load it BEFORE main.js.
+- `assets/js/courses-data.js`: `PACKAGES`, the PTE and IELTS packages (One-to-One, Full Course,
+  4 modules): name, Bangla description, practise list, duration, classes, fee.
+  `assets/js/packages.js` builds the package cards on pte.html/ielts.html (`data-packages`),
+  module.html (`data-package-page`), the enroll dropdown (`#f-course`) and "From ৳…"
+  (`data-pkg-from`). Load order: courses-data.js, packages.js, main.js.
 - `assets/js/typing.js`: typing speed test. `assets/js/kids-game.js`: kids spelling game.
 - `assets/images/`: logo.png (for light backgrounds), logo-light.png (for dark), favicon.png,
   nirob.jpg (instructor photo). `assets/images/credentials/`: certificate images + `-thumb.jpg`.
@@ -72,6 +79,17 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
    - `dictation`: `answer` is the full sentence (no `prompt`)
 3. For reading, the answer must be findable in `passage`; for IELTS listening, in `script`.
 4. A whole new test: add a new key to `MOCK_TESTS` (same shape) and link to `mock.html#<key>`.
+
+## How to change a package price
+1. Open `assets/js/courses-data.js` and find the exam (`pte` or `ielts`) and the package
+   (`module: "full"`, `"writing"` ...).
+2. Change `fee` to the new number, without commas or ৳ (e.g. `fee: 9500`).
+3. Nothing else. The package cards, module.html, the "From ৳…" text (side card and the
+   courses.html table), the "৪টা মডিউল আলাদা নিলে …" line and the enroll dropdown all update.
+   (The "From ৳3,000" written in the HTML is only a fallback for when JS is off; update it too
+   if the cheapest price changes.)
+- Duration and classes per week are in the same entry (`duration`, `classes`).
+- Practise lists use `groups`; only use task names that are on pte.html / ielts.html.
 
 ## How to add a new certificate
 1. Put the full image and a smaller copy named `<name>-thumb.jpg` (about 600px wide) in

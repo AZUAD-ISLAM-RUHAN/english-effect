@@ -34,7 +34,7 @@
       <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="courses.html">Courses</a></span><span>PTE Academic</span></nav>
       <h1>PTE Academic, task by task</h1>
       <p class="bn">PTE পরীক্ষা পুরোটাই কম্পিউটারে। প্রতিটা task এর নিয়ম, টেমপ্লেট আর সময় ভাগ করা শিখুন, তারপর আসল ফরম্যাটে প্র্যাকটিস করুন।</p>
-      <div class="hero-cta"><a href="enroll.html#pte" class="btn btn-green">Enroll now <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="free-class.html" class="btn btn-outline">Try the free class</a></div>
+      <div class="hero-cta"><a href="#packages" class="btn btn-green">Choose a package <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="free-class.html" class="btn btn-outline">Try the free class</a></div>
     </div>
   </section>
 
@@ -72,17 +72,25 @@
       </div>
       <aside class="side" data-reveal>
         <h3>PTE Academic</h3>
-        <!-- TODO: Duration, Classes ar Fee er asol tottho pele "Ask on WhatsApp" er jaygay boshao -->
+        <!-- TODO: Duration ar Classes er asol tottho pele boshao. Fee asche assets/js/courses-data.js theke. -->
         <dl>
           <div><dt>Duration</dt><dd>Ask on WhatsApp</dd></div>
           <div><dt>Classes</dt><dd>Ask on WhatsApp</dd></div>
           <div><dt>Mode</dt><dd>Online live</dd></div>
-          <div><dt>Fee</dt><dd>Ask on WhatsApp</dd></div>
+          <div><dt>Fee</dt><dd data-pkg-from="pte">From ৳3,000</dd></div>
         </dl>
-        <a href="enroll.html#pte" class="btn btn-green btn-block">Enroll in this course</a>
+        <a href="#packages" class="btn btn-green btn-block">Choose a package</a>
         <a href="#" data-wa class="btn btn-ghost btn-block" target="_blank" rel="noopener">Ask on WhatsApp</a>
         <small class="bn">ভর্তির আগে একবার ফ্রি শুক্রবারের লাইভ ক্লাসে বসে দেখতে পারেন।</small>
       </aside>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="packages">
+    <div class="wrap">
+      <div class="head"><div data-reveal><span class="kicker">Packages</span><h2 class="h2">Choose your package</h2><p class="lead bn">পুরো কোর্স, প্রাইভেট ক্লাস, অথবা শুধু যে মডিউলটা দরকার।</p></div></div>
+      <!-- Cards come from assets/js/courses-data.js (dam ekhane bodlao) -->
+      <div class="pkg-grid" data-packages="pte"></div>
     </div>
   </section>
 
@@ -107,6 +115,8 @@
 </main>
 
 <div id="site-footer"></div>
+<script src="assets/js/courses-data.js"></script>
+<script src="assets/js/packages.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
