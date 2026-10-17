@@ -42,6 +42,13 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 - Cards use the shared tokens in `:root` (`--card-pad`, `--card-lift`, `--card-shadow`, `--card-move`).
 - New page: copy an existing page (e.g. faq.html), change `<title>`, `data-page`
   and the content, then add it to the menu/footer in main.js.
+- Every page's `<head>` has a meta description, `theme-color` and the Open Graph / Twitter
+  share tags. On a new page copy that whole block and change `og:title` (= the `<title>`),
+  `og:description` (= the meta description, English, under 150 characters, no new claims)
+  and `og:url` (`https://englisheffectbd.com/<file>.html`; index is just the domain).
+  The share image is `assets/images/og-image.png` (1200x630) for every page.
+- The floating WhatsApp button and back-to-top button are injected by main.js on every page
+  (message text: `SITE.whatsappHello`). Do not add them by hand.
 
 ## Mock tests (demo)
 - `mock-test.html`: landing page. Free sample cards, the 30-day pass, and "Past attempts"
