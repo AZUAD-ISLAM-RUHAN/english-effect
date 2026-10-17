@@ -34,7 +34,7 @@ var SITE = {
     header.outerHTML =
       '<div class="progress" id="progress"></div>' +
       '<header class="nav" id="nav"><div class="wrap nav-inner">' +
-        '<a href="index.html" class="logo" aria-label="English Effect home"><img src="assets/images/logo.png" alt="English Effect" width="600" height="281"></a>' +
+        '<a href="index.html" class="logo" aria-label="English Effect home"><img src="assets/images/logo.png" alt="English Effect" width="600" height="281" loading="eager"></a>' +
         '<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>' +
         '<nav class="menu" id="menu">' +
           '<a href="index.html" data-nav="home">Home</a>' +
@@ -62,7 +62,7 @@ var SITE = {
     footer.outerHTML =
       '<footer class="footer"><div class="wrap">' +
         '<div class="footer-grid">' +
-          '<div><a href="index.html" class="logo logo-light"><img src="assets/images/logo-light.png" alt="English Effect" width="600" height="281"></a>' +
+          '<div><a href="index.html" class="logo logo-light"><img src="assets/images/logo-light.png" alt="English Effect" width="600" height="281" loading="lazy"></a>' +
             '<p class="tagline">Your English Can Take You Further</p>' +
             '<p class="small bn">দেশে ও প্রবাসে বাংলাভাষী student দের জন্য PTE, IELTS আর Spoken English।</p></div>' +
           '<div><h4>Courses</h4><a href="pte.html">PTE Academic</a><a href="ielts.html">IELTS</a><a href="spoken.html">Spoken English</a><a href="kids.html">Kids English</a></div>' +
