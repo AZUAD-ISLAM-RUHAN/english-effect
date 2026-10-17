@@ -85,7 +85,7 @@
 
     app.innerHTML =
       '<div class="mk-bar"><div class="wrap mk-bar-in">' +
-        '<div class="mk-title"><span class="mk-exam ' + T.exam + '">' + T.exam.toUpperCase() + '</span><b>' + esc(T.title) + '</b></div>' +
+        '<div class="mk-title"><span class="mk-exam ' + T.exam + '">' + T.exam.toUpperCase() + '</span><h1>' + esc(T.title) + '</h1></div>' +
         '<nav class="mk-tabs" id="mk-tabs"></nav>' +
         '<div class="mk-right"><span class="mk-timer" id="mk-timer" aria-live="off">--:--</span><button class="btn btn-green btn-sm" id="mk-submit" type="button">Submit test</button></div>' +
       '</div><div class="mk-progress"><i id="mk-prog"></i></div></div>' +

@@ -50,7 +50,7 @@
 .mk-bar { position: sticky; top: calc(76px + env(safe-area-inset-top, 0px)); z-index: 30; background: var(--dark); color: var(--white); }
 .mk-bar-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; padding-block: .6rem; }
 .mk-title { display: flex; align-items: center; gap: .7rem; min-width: 0; }
-.mk-title b { font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mk-title b, .mk-title h1 { font-size: .98rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mk-tabs { display: flex; gap: .3rem; padding: 4px; border-radius: 12px; background: rgba(255,255,255,.07); }
 .mk-tabs button { font: 700 .86rem var(--font); padding: .5rem .95rem; border-radius: 9px; border: 0; cursor: pointer; background: transparent; color: rgba(255,255,255,.7); transition: background .25s, color .25s; }
 .mk-tabs button.on { background: var(--white); color: var(--dark); }
@@ -208,7 +208,7 @@
 @media (max-width: 860px) {
   .mk-bar { top: calc(76px + env(safe-area-inset-top, 0px)); }
   .mk-tabs { order: 3; width: 100%; overflow-x: auto; }
-  .mk-title b { max-width: 50vw; }
+  .mk-title b, .mk-title h1 { max-width: 50vw; }
 }
 @media (max-width: 640px) {
   .mk-samples, .mk-price-cards, .mk-ans { grid-template-columns: 1fr; }

@@ -321,3 +321,6 @@ var SITE = {
     }
   }
 })();
+
+/* Service worker (installable app + offline page). Shudhu https e, localhost/file e na. */
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("/sw.js");

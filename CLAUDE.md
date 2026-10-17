@@ -26,6 +26,8 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   module.html (`data-package-page`), the enroll dropdown (`#f-course`) and "From ৳…"
   (`data-pkg-from`). Load order: courses-data.js, packages.js, main.js.
 - `assets/js/typing.js`: typing speed test. `assets/js/kids-game.js`: kids spelling game.
+- PWA: `manifest.webmanifest`, `sw.js` (network first, offline fallback `offline.html`),
+  `assets/images/icons/` (app icons). SEO: `robots.txt`, `sitemap.xml`.
 - `assets/images/`: logo.png (for light backgrounds), logo-light.png (for dark), favicon.png,
   nirob.jpg (instructor photo). `assets/images/credentials/`: certificate images + `-thumb.jpg`.
 
@@ -54,6 +56,16 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   `og:description` (= the meta description, English, under 150 characters, no new claims)
   and `og:url` (`https://englisheffectbd.com/<file>.html`; index is just the domain).
   The share image is `assets/images/og-image.png` (1200x630) for every page.
+- SEO on every page: a unique `<title>` (60 characters max) and meta description (155 max),
+  `<link rel="canonical" href="https://englisheffectbd.com/<file>.html">` (index: the domain),
+  `<link rel="manifest" href="/manifest.webmanifest">` and the apple-touch-icon
+  `assets/images/icons/icon-192.png`. One `<h1>` per page; every `<img>` has a meaningful alt.
+- **New page: add its URL to `sitemap.xml`** (not thanks.html, offline.html or mock.html).
+  A new PTE/IELTS package also needs its `module.html?exam=..&module=..` URL there.
+- **After a big change, raise `VERSION` in `sw.js`** (e.g. `ee-v1` -> `ee-v2`) so old caches
+  are cleared. The service worker only runs on https (the live site), not locally.
+- Structured data (JSON-LD, EducationalOrganization) is in index.html `<head>`. Keep it in
+  sync if the phone, email, Facebook or YouTube link changes in `SITE`.
 - The floating WhatsApp button and back-to-top button are injected by main.js on every page
   (message text: `SITE.whatsappHello`). Do not add them by hand.
 

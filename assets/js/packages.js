@@ -72,6 +72,11 @@
     } else {
       var name = label(key, p);
       document.title = name + " | English Effect";
+      // protita package er nijer URL (sitemap.xml e eki URL ache)
+      var own = "https://englisheffectbd.com/module.html?exam=" + key + "&module=" + p.module;
+      var canon = document.querySelector('link[rel="canonical"]'), ogUrl = document.querySelector('meta[property="og:url"]');
+      if (canon) canon.setAttribute("href", own);
+      if (ogUrl) ogUrl.setAttribute("content", own);
       var md = document.querySelector('meta[name="description"]');
       if (md) md.setAttribute("content", name + " at English Effect: " + p.practise.map(function (g) { return e.groups[g].title; }).join(", ") + ".");
       var tasks = p.practise.map(function (g) {
