@@ -33,9 +33,9 @@
   <section class="page-hero">
     <span class="ghost" aria-hidden="true">PTE</span>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Practice</a></span><span>PTE calculator</span></nav>
-      <h1>PTE score target checker</h1>
-      <p class="bn">আপনার Listening, Reading, Speaking আর Writing স্কোর দিন, আর আপনার university বা ভিসার টার্গেট। প্রতিটা অংশে আর কত লাগবে দেখে নিন।</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-bn="হোম">Home</a><span><a href="games.html" data-bn="প্র্যাকটিস">Practice</a></span><span data-bn="PTE ক্যালকুলেটর">PTE calculator</span></nav>
+      <h1 data-bn="PTE স্কোর টার্গেট চেকার">PTE score target checker</h1>
+      <p class="bn" data-en="Enter your Listening, Reading, Speaking and Writing scores, and your university or visa target. See how much more each section needs.">আপনার Listening, Reading, Speaking আর Writing স্কোর দিন, আর আপনার university বা ভিসার টার্গেট। প্রতিটা অংশে আর কত লাগবে দেখে নিন।</p>
     </div>
   </section>
 
@@ -43,7 +43,7 @@
     <div class="wrap cl-wrap" id="pte-calc">
       <div class="cl-grid">
         <div class="cl-card">
-          <h2>Your scores (10–90)</h2>
+          <h2 data-bn="আপনার স্কোর (১০–৯০)">Your scores (10–90)</h2>
             <div class="cl-raw">
               <label for="ps-listening-n">Listening</label>
               <input type="range" id="ps-listening" min="10" max="90" value="62" aria-label="Listening">
@@ -61,12 +61,12 @@
               <input type="range" id="ps-writing" min="10" max="90" value="64" aria-label="Writing">
               <input type="number" id="ps-writing-n" min="10" max="90" value="64">
             </div>
-          <h2 class="cl-h2b">Your target</h2>
+          <h2 class="cl-h2b" data-bn="আপনার টার্গেট">Your target</h2>
           <label class="cl-check"><input type="checkbox" id="pt-same" checked> Same target for every skill</label>
           <div id="pt-one">
-            <div class="cl-presets"><span>Quick pick:</span><button type="button" data-preset="50">50</button><button type="button" data-preset="58">58</button><button type="button" data-preset="65">65</button><button type="button" data-preset="79">79</button></div>
+            <div class="cl-presets"><span data-bn="দ্রুত বেছে নিন:">Quick pick:</span><button type="button" data-preset="50">50</button><button type="button" data-preset="58">58</button><button type="button" data-preset="65">65</button><button type="button" data-preset="79">79</button></div>
             <div class="cl-raw">
-              <label for="pt-all-n">All skills</label>
+              <label for="pt-all-n" data-bn="সব অংশ">All skills</label>
               <input type="range" id="pt-all" min="10" max="90" value="65" aria-label="All skills">
               <input type="number" id="pt-all-n" min="10" max="90" value="65">
             </div>
@@ -94,7 +94,7 @@
         <div class="cl-result">
           <div class="pr-top">
             <div class="pr-ring" id="pr-ring"><b id="pr-met">0</b><span>/ 4</span></div>
-            <div><small>Skills at target</small><p class="bn" id="pr-summary"></p></div>
+            <div><small data-bn="টার্গেটে পৌঁছানো অংশ">Skills at target</small><p class="bn" id="pr-summary"></p></div>
           </div>
             <div class="pr-row" id="pr-listening">
               <div class="pr-head"><span>Listening</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
@@ -109,7 +109,7 @@
               <div class="pr-head"><span>Writing</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
               <div class="pr-track"><i class="pr-fill"></i><span class="pr-target" aria-hidden="true"></span></div>
             </div>
-          <div class="pr-legend"><span><i class="pr-lg-fill"></i>Your score</span><span><i class="pr-lg-target"></i>Target</span></div>
+          <div class="pr-legend"><span data-bn="&lt;i class=&quot;pr-lg-fill&quot;&gt;&lt;/i&gt;আপনার স্কোর"><i class="pr-lg-fill"></i>Your score</span><span data-bn="&lt;i class=&quot;pr-lg-target&quot;&gt;&lt;/i&gt;টার্গেট"><i class="pr-lg-target"></i>Target</span></div>
           <p class="cl-note bn">চার অংশের সাধারণ গড়: <b id="pr-avg">0</b>। এটা শুধু একটা ধারণা, PTE এর অফিশিয়াল overall score এভাবে হিসাব হয় না। কোন স্কোর লাগবে তা আপনার university বা ভিসার শর্তে দেখে নিন।</p>
         </div>
       </div>
@@ -118,8 +118,8 @@
 
   <section class="section section-soft">
     <div class="wrap cl-cta">
-      <div><h2 class="h2">Short of your target?</h2><p class="lead bn">যে অংশে স্কোর কম, সেই মডিউলটা আলাদা করে নিতে পারেন, অথবা ফ্রি মক টেস্ট দিয়ে দেখুন।</p></div>
-      <div class="btn-row"><a href="pte.html" class="btn btn-green">PTE packages</a><a href="mock-test.html" class="btn btn-ghost">Try a mock test</a></div>
+      <div><h2 class="h2" data-bn="টার্গেট থেকে পিছিয়ে আছেন?">Short of your target?</h2><p class="lead bn" data-en="You can take the module where your score is low on its own, or try a free mock test.">যে অংশে স্কোর কম, সেই মডিউলটা আলাদা করে নিতে পারেন, অথবা ফ্রি মক টেস্ট দিয়ে দেখুন।</p></div>
+      <div class="btn-row"><a href="pte.html" class="btn btn-green" data-bn="PTE প্যাকেজ">PTE packages</a><a href="mock-test.html" class="btn btn-ghost" data-bn="একটা মক টেস্ট দিন">Try a mock test</a></div>
     </div>
   </section>
 </main>
