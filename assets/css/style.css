@@ -748,9 +748,7 @@ html.ee-bar-open .to-top { bottom: calc(20px + 56px + 12px + 124px + env(safe-ar
   .menu > a:not(.btn), .drop > button { white-space: nowrap; }
 }
 @media (min-width: 861px) and (max-width: 980px) {
-  .nav .menu { gap: .6rem; }  /* .nav = stronger than the 1080px rule further down */
-  .nav .menu .btn-sm { white-space: nowrap; padding: 0 .75rem; }
-  .menu .lang-sw button { min-width: 32px; padding: .4rem .4rem; }
+  .menu { gap: .95rem; }
   .menu > a:not(.btn), .drop > button { font-size: .88rem; }
   .menu .btn-sm { padding: 0 .95rem; }
 }
@@ -781,12 +779,8 @@ html.ee-bar-open .to-top { bottom: calc(20px + 56px + 12px + 124px + env(safe-ar
   .faq-nav { position: static; display: flex; flex-wrap: wrap; }
   .cta-box { grid-template-columns: 1fr; padding: 3rem 2rem; }
 }
-/* language switch: in the menu on desktop, next to the burger on phones/tablets */
-.lang-bar { display: none; }
 @media (max-width: 860px) {
   .burger { display: grid; }
-  .lang-bar { display: block; margin-left: auto; }
-  .lang-menu { display: none; }
   .menu {
     position: absolute; top: 76px; left: 0; right: 0; display: none;
     flex-direction: column; align-items: stretch; gap: 0; max-height: calc(100vh - 76px); overflow-y: auto;

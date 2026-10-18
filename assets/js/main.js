@@ -36,7 +36,6 @@ var SITE = {
       '<div class="progress" id="progress"></div>' +
       '<header class="nav" id="nav"><div class="wrap nav-inner">' +
         '<a href="index.html" class="logo" aria-label="English Effect home"><img src="assets/images/logo.png" alt="English Effect" width="600" height="281" loading="eager"></a>' +
-        '<div class="lang-bar" data-lang-switch></div>' +  // phone e switch ta menu er baire, burger er pashe
         '<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>' +
         '<nav class="menu" id="menu">' +
           '<a href="index.html" data-nav="home">Home</a>' +
@@ -66,7 +65,6 @@ var SITE = {
               '<a href="contact.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></span><span><b>Contact</b><small>WhatsApp, email</small></span></a>' +
             '</div></div>' +
           '<button type="button" class="btn btn-ghost btn-sm" data-install-app>Install app</button>' +  // install.js dekhay/lukay
-          '<div class="lang-menu" data-lang-switch></div>' +  // lang.js EN / বাং switch boshay (desktop)
           '<a href="enroll.html" class="btn btn-green btn-sm">Enroll now</a>' +
         '</nav>' +
       '</div></header>';
