@@ -54,8 +54,8 @@ var SITE = {
               '<a href="ielts-calculator.html"><span class="chip c-ielts">7.0</span><span><b>IELTS Band Calculator</b><small>Overall band from 4 scores</small></span></a>' +
               '<a href="pte-calculator.html"><span class="chip c-pte">PTE</span><span><b>PTE Score Checker</b><small>Your score vs your target</small></span></a>' +
               '<a href="games.html"><span class="chip c-kids">PLAY</span><span><b>Practice Games</b><small>Typing test, spelling game</small></span></a>' +
+              '<a href="study-plan.html"><span class="chip c-plain">PLAN</span><span><b>Study Plan Maker</b><small>Week-by-week IELTS or PTE plan</small></span></a>' +
               '<a href="daily-word.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 7h6M9 11h4"/></svg></span><span><b>Word of the Day</b><small>One useful word a day</small></span></a>' +
-              '<a href="study-plan.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM4 10h16M8 2v4M16 2v4"/></svg></span><span><b>Study Plan Maker</b><small>Week-by-week IELTS or PTE plan</small></span></a>' +
             '</div></div>' +
           '<a href="free-class.html" data-nav="free">Free Class</a>' +
           '<div class="drop drop-sm" data-nav="about"><button type="button" aria-expanded="false">About <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +
