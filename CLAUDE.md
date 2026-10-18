@@ -3,7 +3,7 @@
 Static website (plain HTML, CSS, JS, no framework, no build step) for English Effect,
 an online English course business run by Ali Jaker Nirob (Pearson PTE Academic for Teachers,
 IDP IELTS Teacher Training). Courses: PTE Academic, IELTS, Spoken English, Kids English.
-Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com. Hosting: Netlify.
+Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com. Hosting: Cloudflare Pages (english-effect.pages.dev).
 
 ## Structure
 - One HTML file per page in the root: index, courses, pte, ielts, spoken, kids, free-class,
@@ -19,6 +19,9 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   (`daily-word.html`, `assets/js/daily-word.js`), styles in `assets/css/tools.css`.
   The home page shows today's word in `<div id="word-of-day"></div>` (index.html loads
   tools.css and daily-word.js for it).
+- Home "Today on English Effect" section (`.today-sec`, right after the hero): 4 cards,
+  word of the day, level test, study plan maker, IELTS & PTE calculators (2x2 below 1080px).
+  It replaced the old home "Free tools" section, so don't add a second tools section.
 - `module.html`: ONE template for every PTE/IELTS package (`module.html?exam=pte&module=writing`).
   Its content comes from `assets/js/courses-data.js` through `assets/js/packages.js`.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.
@@ -28,6 +31,11 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
   - The `SITE` object at the top of main.js holds every phone number and link
     (bKash, Nagad, bank account, WhatsApp, Facebook, YouTube, email). Change them there only.
   - Each page sets `<body data-page="...">` so the right menu item is highlighted.
+  - Friday bar (`.fbar`, sections 2/2b/10 in main.js): yellow strip above the header on every
+    page, countdown to Friday 9:00 PM Bangladesh time, "LIVE NOW" during the class
+    (9:00-10:30 PM, `CLASS_MIN`). The x hides it for that day (`localStorage` `ee-fbar-hidden`).
+    It is not sticky, so it never covers the sticky header. If the line is too long it hides
+    the countdown, then switches to the short text.
 - `assets/js/credentials.js`: the `CREDENTIALS` array (every certificate) plus the code that builds
   the cards on instructor.html (`data-credentials="full"`), the 3 thumbnails on index.html
   (`data-credentials="mini"`) and the lightbox. Load it BEFORE main.js.
@@ -135,4 +143,6 @@ two FAQ answers (verify time, exam registration).
   domain, so main.js (section 13) sends the form with fetch and opens thanks.html itself.
   On failure it shows a red message in `#formNote`. The `redirect` input is the no-JS fallback.
   It submits from anywhere, including Live Server, so a local test sends a real email.
-- Deploy: push to GitHub; Netlify auto-deploys from the main branch.
+- Deploy: push to GitHub; Cloudflare Pages auto-deploys the main branch to
+  english-effect.pages.dev and englisheffectbd.com. Netlify is no longer used.
+- **Every push is one deploy. Batch changes together and push less often.**

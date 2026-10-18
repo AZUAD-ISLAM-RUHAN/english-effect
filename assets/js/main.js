@@ -31,9 +31,20 @@ var SITE = {
 
   /* ---------- 2. Header (shob page e same) ---------- */
   var header = document.getElementById("site-header");
+  // Friday bar: x chaple oi din ar dekhay na (localStorage "ee-fbar-hidden" = ajker date)
+  var fbarOff = false;
+  try { fbarOff = localStorage.getItem("ee-fbar-hidden") === new Date().toDateString(); } catch (e) {}
   if (header) {
     header.outerHTML =
       '<div class="progress" id="progress"></div>' +
+      (fbarOff ? '' :
+      '<div class="fbar" id="fbar" role="region" aria-label="Free live class">' +
+        '<div class="wrap fbar-in">' +
+          '<a class="fbar-txt" href="free-class.html"><span aria-hidden="true">🔴</span> <span class="fbar-long">Free live class every Friday, 9:00 PM</span><span class="fbar-short">Free class<span class="fbar-when">, Fri 9 PM</span></span></a>' +
+          '<span class="fbar-cd" id="fbarCd"></span>' +
+          '<a class="fbar-go" href="free-class.html">Join free →</a>' +
+          '<button type="button" class="fbar-x" id="fbarX" aria-label="Hide for today">×</button>' +
+        '</div></div>') +
       '<header class="nav" id="nav"><div class="wrap nav-inner">' +
         '<a href="index.html" class="logo" aria-label="English Effect home"><img src="assets/images/logo.png" alt="English Effect" width="600" height="281" loading="eager"></a>' +
         '<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>' +
@@ -68,6 +79,29 @@ var SITE = {
           '<a href="enroll.html" class="btn btn-green btn-sm">Enroll now</a>' +
         '</nav>' +
       '</div></header>';
+  }
+
+  /* ---------- 2b. Friday bar: close + fit on one line ----------
+     Jayga na thakle prothome countdown lukay (fit1), tarpor choto lekha (fit2), tarpor shudhu "Free class" (fit3).
+     Font load howar por abar mapa hoy, karon Montserrat ashle lekha chowra hoy.
+     Countdown / LIVE NOW section 10 theke update hoy. */
+  var fbar = document.getElementById("fbar");
+  function fitBar() {
+    if (!fbar || !fbar.isConnected) return;
+    var txt = fbar.querySelector(".fbar-txt");
+    var steps = ["fit1", "fit2", "fit3"];
+    fbar.classList.remove.apply(fbar.classList, steps);
+    for (var i = 0; i < steps.length && txt.scrollWidth > txt.clientWidth + 1; i++) fbar.classList.add(steps[i]);
+  }
+  if (fbar) {
+    document.getElementById("fbarX").addEventListener("click", function () {
+      fbar.remove();
+      try { localStorage.setItem("ee-fbar-hidden", new Date().toDateString()); } catch (e) {}
+    });
+    window.addEventListener("resize", fitBar);
+    window.addEventListener("load", fitBar);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBar);
+    fitBar();
   }
 
   /* ---------- 3. Footer (shob page e same) ---------- */
@@ -194,8 +228,8 @@ var SITE = {
   }
 
   /* ---------- 10. Countdown to Friday 9:00 PM Bangladesh time (UTC+6) ---------- */
-  var cds = document.querySelectorAll("[data-countdown]");
-  if (cds.length) {
+  var cds = document.querySelectorAll("[data-countdown]"), fbarCd = document.getElementById("fbarCd");
+  if (cds.length || fbarCd) {
     var CLASS_MIN = 90; // class koto minute choley (live-now dekhanor jonno)
     function nextClass() {
       var now = Date.now(), off = 6 * 3600e3;
@@ -210,6 +244,12 @@ var SITE = {
     var last = {};
     function tick() {
       var t = nextClass(), diff = t - Date.now();
+      if (fbarCd && fbarCd.isConnected) {   // Friday bar: "2d 5h 07m" / "5h 07m 09s" / LIVE NOW (Fri 9:00-10:30 PM)
+        var bd = Math.floor(diff / 864e5), bh = Math.floor(diff / 36e5) % 24, bm = Math.floor(diff / 6e4) % 60, bs = Math.floor(diff / 1e3) % 60;
+        var label = diff <= 0 ? "LIVE NOW" : bd ? bd + "d " + bh + "h " + pad(bm) + "m" : bh + "h " + pad(bm) + "m " + pad(bs) + "s";
+        fbarCd.classList.toggle("is-live", diff <= 0);
+        if (fbarCd.textContent !== label) { fbarCd.textContent = label; fitBar(); }
+      }
       cds.forEach(function (cd, k) {
         var live = cd.parentNode.querySelector(".live-now");
         if (diff <= 0) { cd.hidden = true; if (live) live.hidden = false; return; }
@@ -272,7 +312,7 @@ var SITE = {
 
   /* ---------- 13. Enroll form (Web3Forms) ----------
      Free plan e Web3Forms onno domain e redirect kore na, tai form ta JS diye pathai
-     ar success hole nijerai thanks.html e niye jai (local, netlify.app, asol domain shob jaygay).
+     ar success hole nijerai thanks.html e niye jai (local, pages.dev, asol domain shob jaygay).
      JS na cholle form ta normal HTML form hishebe jay. */
   var enroll = document.getElementById("enrollForm");
   if (enroll && window.fetch) {
