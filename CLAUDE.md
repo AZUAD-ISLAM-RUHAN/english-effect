@@ -7,13 +7,18 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 
 ## Structure
 - One HTML file per page in the root: index, courses, pte, ielts, spoken, kids, free-class,
-  instructor, games, typing, kids-game, ielts-calculator, pte-calculator, mock-test, mock, module,
+  instructor, games, typing, kids-game, ielts-calculator, pte-calculator, level-test, daily-word,
+  mock-test, mock, module,
   enroll, faq, contact, thanks.
 - Menu (main.js): Home | Courses (dropdown) | Mock Test | Free Tools (dropdown: IELTS/PTE
-  calculators, games) | Free Class | About (dropdown: Instructor, FAQ, Contact) | Install app |
+  level test, calculators, games, word of the day) | Free Class | About (dropdown: Instructor, FAQ, Contact) | Install app |
   Enroll now. Active item comes from `data-page` via the `map` in main.js.
 - Calculators: `ielts-calculator.html`, `pte-calculator.html`, logic in `assets/js/calc.js`,
   styles in `assets/css/calc.css` (`data-page="tools"`).
+- Level test (`level-test.html`, `assets/js/level-test.js`) and Word of the Day
+  (`daily-word.html`, `assets/js/daily-word.js`), styles in `assets/css/tools.css`.
+  The home page shows today's word in `<div id="word-of-day"></div>` (index.html loads
+  tools.css and daily-word.js for it).
 - `module.html`: ONE template for every PTE/IELTS package (`module.html?exam=pte&module=writing`).
   Its content comes from `assets/js/courses-data.js` through `assets/js/packages.js`.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.

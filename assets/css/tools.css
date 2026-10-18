@@ -1,0 +1,132 @@
+/* =========================================================
+   English Effect — Level test + Daily word (level-test.html, daily-word.html)
+   ========================================================= */
+
+/* ---------- Level test ---------- */
+.lt-wrap { max-width: 760px; }
+.lt-card, .lt-result { padding: 2.2rem; border-radius: 24px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 40px 70px -50px rgba(15,42,51,.5); animation: rise .45s var(--ease); }
+.lt-intro { display: grid; gap: .8rem; }
+.lt-intro h2 { font-size: 1.5rem; font-weight: 800; margin: .4rem 0 .4rem; }
+.lt-intro label { font-weight: 700; font-size: .92rem; margin-top: .4rem; }
+.lt-intro label small { color: var(--muted); font-weight: 500; }
+.lt-badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+.lt-badges span { padding: .3rem .7rem; border-radius: 999px; background: var(--soft); font-size: .8rem; font-weight: 700; color: var(--green-dk); }
+.lt-input { width: 100%; min-height: 50px; padding: 0 1rem; font: 500 1rem var(--font); border: 1.5px solid var(--line); border-radius: 12px; background: var(--soft); color: var(--ink); }
+.lt-input:focus { outline: none; border-color: var(--green); background: var(--white); }
+.lt-goals { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-bottom: .6rem; }
+.lt-goals button { font: 600 .92rem var(--font); padding: .8rem; border-radius: 12px; border: 1.5px solid var(--line); background: var(--white); cursor: pointer; transition: border-color .2s, background .2s; }
+.lt-goals button:hover { border-color: var(--lime); }
+.lt-goals button[aria-pressed="true"] { border-color: var(--green); background: #EAF6E6; }
+.lt-small { font-size: .88rem; color: var(--muted); margin-top: .4rem; }
+
+.lt-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: .9rem; color: var(--muted); }
+.lt-top b { color: var(--ink); }
+.lt-skill { padding: .25rem .65rem; border-radius: 999px; background: var(--soft); font-weight: 700; font-size: .78rem; color: var(--green-dk); }
+.lt-prog { height: 8px; margin: .9rem 0 1.6rem; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.lt-prog i { display: block; height: 100%; background: linear-gradient(90deg, var(--lime), var(--green)); transform-origin: left; transition: transform .5s var(--ease); }
+.lt-passage { margin: 0 0 1.2rem; padding: 1rem 1.2rem; border-left: 4px solid var(--green); border-radius: 0 12px 12px 0; background: var(--soft); line-height: 1.7; color: var(--ink); }
+.lt-question { font-size: clamp(1.25rem, 3vw, 1.6rem); font-weight: 800; letter-spacing: -.01em; line-height: 1.35; margin-bottom: 1.4rem; }
+.lt-blank { color: var(--green); letter-spacing: .05em; }
+.lt-opts { display: grid; gap: .6rem; }
+.lt-opt { display: flex; align-items: center; gap: .9rem; width: 100%; padding: .95rem 1.1rem; text-align: left; font: 600 1.02rem var(--font); color: var(--ink); background: var(--white); border: 1.5px solid var(--line); border-radius: 14px; cursor: pointer; transition: border-color .2s, background .2s, transform .2s var(--ease); animation: rise .4s var(--ease) both; animation-delay: calc(var(--i) * 60ms); }
+.lt-opt span { flex: none; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--soft); color: var(--green-dk); font-weight: 800; font-size: .85rem; transition: background .2s, color .2s; }
+.lt-opt:hover { border-color: var(--lime); transform: translateX(4px); }
+.lt-opt.picked { border-color: var(--green); background: #EAF6E6; }
+.lt-opt.picked span { background: var(--green); color: var(--white); }
+.lt-foot { display: flex; justify-content: space-between; margin-top: 1.2rem; }
+.lt-skip { font: 600 .9rem var(--font); background: none; border: 0; color: var(--muted); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; padding: .4rem 0; }
+.lt-skip:hover { color: var(--ink); }
+
+.lt-result { display: grid; gap: 1.4rem; }
+.lt-res-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.lt-res-top small { font-size: .8rem; font-weight: 700; color: var(--muted); }
+.lt-res-top h2 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.05; color: var(--dark); }
+.lt-tag { display: inline-block; margin-top: .4rem; padding: .25rem .65rem; border-radius: 999px; background: var(--yellow); font-weight: 800; font-size: .78rem; color: var(--dark); }
+.lt-score { flex: none; width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; align-content: center; background: var(--dark); color: var(--white); }
+.lt-score b { font-size: 2.4rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+.lt-score span { font-size: .8rem; color: var(--lime); font-weight: 700; }
+.lt-ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: .35rem; }
+.lt-ladder div { display: grid; gap: .4rem; text-align: center; font-size: .72rem; font-weight: 700; color: var(--muted); }
+.lt-ladder i { height: 10px; border-radius: 999px; background: var(--soft); transition: background .4s; transition-delay: calc(var(--i) * 120ms + .2s); }
+.lt-result.in .lt-ladder .past i { background: var(--lime); }
+.lt-result.in .lt-ladder .now i { background: var(--green); box-shadow: 0 0 0 3px rgba(59,166,47,.25); }
+.lt-ladder .now span { color: var(--green-dk); }
+.lt-text { font-size: 1.05rem; line-height: 1.7; }
+.lt-skills { display: grid; gap: .6rem; }
+.lt-skills > div { display: grid; grid-template-columns: 100px 1fr 44px; gap: .8rem; align-items: center; font-size: .92rem; font-weight: 600; }
+.lt-skills b { text-align: right; font-variant-numeric: tabular-nums; }
+.lt-bar { height: 10px; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.lt-bar i { display: block; height: 100%; width: var(--w); background: var(--green); border-radius: inherit; transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease) .3s; }
+.lt-result.in .lt-bar i { transform: scaleX(1); }
+.lt-next { padding: 1rem 1.2rem; border-radius: 14px; background: var(--soft); }
+.lt-next small { display: block; font-size: .78rem; font-weight: 700; color: var(--muted); }
+.lt-course { font-size: 1.15rem; font-weight: 800; color: var(--green-dk); text-decoration: none; }
+.lt-course:hover { text-decoration: underline; }
+.lt-review { margin: 0; padding-left: 1.3rem; display: grid; gap: .7rem; }
+.lt-review li b { display: block; font-weight: 600; }
+.lt-review li span { font-size: .9rem; color: var(--muted); }
+.lt-review li.ok::marker { color: var(--green); }
+.lt-review li.bad span { color: #B23B2A; }
+
+/* ---------- Daily word ---------- */
+.dw-wrap { max-width: 1040px; }
+.dw-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: start; }
+.dw-card { position: relative; overflow: hidden; padding: 2.2rem; border-radius: 26px; background: var(--dark); color: var(--white); display: grid; gap: 1.1rem; isolation: isolate; min-width: 0; animation: rise .45s var(--ease); }
+.dw-card::before { content: ""; position: absolute; z-index: -1; width: 380px; aspect-ratio: 1; right: -140px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(59,166,47,.5), transparent 65%); }
+.dw-card.celebrate { animation: glow 1s var(--ease); }
+@keyframes glow { 40% { box-shadow: 0 0 0 6px rgba(141,198,63,.45); } }
+.dw-nav { display: flex; align-items: center; justify-content: space-between; font-weight: 700; font-size: .9rem; color: rgba(255,255,255,.7); }
+.dw-nav button { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); color: var(--white); font-size: 1.4rem; line-height: 1; cursor: pointer; transition: background .2s; }
+.dw-nav button:hover:not(:disabled) { background: rgba(255,255,255,.15); }
+.dw-nav button:disabled { opacity: .3; cursor: default; }
+.dw-pos { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+.dw-word { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 900; letter-spacing: -.035em; line-height: 1; overflow-wrap: anywhere; }
+.dw-word span { display: inline-block; animation: wordUp .6s var(--ease) both; animation-delay: calc(var(--i) * 40ms); }
+.dw-say { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: var(--white); font: 700 .88rem var(--font); cursor: pointer; transition: background .2s; }
+.dw-say:hover { background: rgba(255,255,255,.14); }
+.dw-say svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dw-meaning, .dw-example { padding: 1rem 1.2rem; border-radius: 14px; background: rgba(255,255,255,.07); }
+.dw-meaning small, .dw-example small, .dw-quiz small, .dw-week small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: .3rem; }
+.dw-meaning p { font-size: 1.5rem; font-weight: 700; color: var(--yellow); }
+.dw-example p { font-size: 1.05rem; line-height: 1.6; }
+.dw-example mark { background: none; color: var(--lime); font-weight: 800; }
+.dw-card .btn-ghost { background: rgba(255,255,255,.08); color: var(--lime); border-color: rgba(141,198,63,.4); }
+
+.dw-side { display: grid; gap: 1rem; min-width: 0; }
+.dw-quiz, .dw-stats, .dw-week { padding: 1.4rem; border-radius: 20px; background: var(--white); border: 1px solid var(--line); }
+.dw-quiz small, .dw-week small { color: var(--muted); }
+.dw-quiz h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .9rem; }
+.dw-quiz h3 b { color: var(--green-dk); }
+.dw-qopts { display: grid; gap: .5rem; }
+.dw-qopts button { padding: .8rem 1rem; text-align: left; font-size: 1.02rem; font-weight: 600; border-radius: 12px; border: 1.5px solid var(--line); background: var(--white); cursor: pointer; transition: border-color .2s, background .2s; }
+.dw-qopts button:hover:not(:disabled) { border-color: var(--lime); }
+.dw-qopts button:disabled { cursor: default; }
+.dw-qopts button.right { border-color: var(--green); background: #EAF6E6; animation: popIn .35s var(--ease); }
+.dw-qopts button.wrong { border-color: #E0796A; background: #FDEEEB; animation: shake .4s; }
+.dw-qmsg { min-height: 1.4em; margin-top: .7rem; font-weight: 600; color: var(--green-dk); }
+.dw-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center; }
+.dw-stats b { display: block; font-size: 2rem; font-weight: 900; color: var(--dark); font-variant-numeric: tabular-nums; }
+.dw-stats span { font-size: .82rem; color: var(--muted); font-weight: 600; }
+.dw-week { display: grid; gap: .4rem; }
+.dw-week button { display: flex; justify-content: space-between; align-items: center; padding: .55rem .8rem; border-radius: 10px; border: 1px solid transparent; background: var(--soft); font: 600 .92rem var(--font); color: var(--ink); cursor: pointer; transition: border-color .2s; }
+.dw-week button:hover { border-color: var(--lime); }
+.dw-week button.on { border-color: var(--green); background: #EAF6E6; }
+.dw-week button i { font-style: normal; color: var(--green-dk); font-weight: 800; }
+
+/* home widget: <div id="word-of-day"></div> */
+.dw-mini { display: grid; gap: .3rem; padding: 1.3rem 1.4rem; border-radius: 18px; background: var(--dark); color: var(--white); text-decoration: none; transition: transform .35s var(--ease); }
+.dw-mini:hover { transform: translateY(-4px); }
+.dw-mini small { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+.dw-mini b { font-size: 1.8rem; font-weight: 900; letter-spacing: -.02em; }
+.dw-mini span { color: var(--yellow); font-weight: 600; }
+.dw-mini em { font-style: normal; font-size: .85rem; color: rgba(255,255,255,.7); margin-top: .3rem; }
+
+@media (max-width: 900px) { .dw-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .lt-card, .lt-result, .dw-card { padding: 1.4rem; }
+  .lt-goals { grid-template-columns: 1fr; }
+  .lt-ladder span { font-size: .6rem; }
+  .lt-score { width: 88px; height: 88px; }
+  .lt-score b { font-size: 1.9rem; }
+  .lt-skills > div { grid-template-columns: 84px 1fr 40px; }
+}

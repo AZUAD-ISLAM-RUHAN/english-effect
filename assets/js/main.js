@@ -50,9 +50,11 @@ var SITE = {
           '<a href="mock-test.html" data-nav="mock">Mock Test</a>' +
           '<div class="drop drop-sm" data-nav="tools"><button type="button" aria-expanded="false">Free Tools <span class="free-chip">FREE</span> <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +
             '<div class="drop-panel">' +
+              '<a href="level-test.html"><span class="chip c-spoken">TEST</span><span><b>Free Level Test <span class="new-chip">NEW</span></b><small>20 questions, about 10 min</small></span></a>' +
               '<a href="ielts-calculator.html"><span class="chip c-ielts">7.0</span><span><b>IELTS Band Calculator</b><small>Overall band from 4 scores</small></span></a>' +
               '<a href="pte-calculator.html"><span class="chip c-pte">PTE</span><span><b>PTE Score Checker</b><small>Your score vs your target</small></span></a>' +
               '<a href="games.html"><span class="chip c-kids">PLAY</span><span><b>Practice Games</b><small>Typing test, spelling game</small></span></a>' +
+              '<a href="daily-word.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 7h6M9 11h4"/></svg></span><span><b>Word of the Day</b><small>One useful word a day</small></span></a>' +
             '</div></div>' +
           '<a href="free-class.html" data-nav="free">Free Class</a>' +
           '<div class="drop drop-sm" data-nav="about"><button type="button" aria-expanded="false">About <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +

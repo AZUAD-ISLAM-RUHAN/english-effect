@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/tools.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,6 +77,13 @@
     <div class="wrap">
       <div class="head"><div data-reveal><span class="kicker">Free tools</span><h2 class="h2">Check where you stand</h2><p class="lead bn">ফ্রি, কোনো অ্যাকাউন্ট লাগবে না।</p></div></div>
       <div class="tool-cards">
+        <a class="tool-card tc-level" href="level-test.html" data-reveal>
+          <span class="free-chip">FREE</span>
+          <div class="tool-prev tool-levels" aria-hidden="true"><i>A2</i><i>B1</i><i>B2</i><i>C1</i></div>
+          <h3>Take the free level test</h3>
+          <p class="bn">২০টা প্রশ্ন, প্রায় ১০ মিনিট। শেষে আপনার আনুমানিক লেভেল আর কোন কোর্স দিয়ে শুরু করবেন তা দেখাবে।</p>
+          <span class="tool-go">Start the test <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
         <a class="tool-card tc-ielts" href="ielts-calculator.html" data-reveal>
           <span class="free-chip">FREE</span>
           <div class="tool-prev" aria-hidden="true"><small>Overall band</small><b>7.0</b></div>
@@ -91,6 +99,8 @@
           <span class="tool-go">Open checker <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
       </div>
+      <!-- daily-word.js fills this with today's word -->
+      <div class="wod-slot" data-reveal><div id="word-of-day"></div></div>
     </div>
   </section>
 
@@ -257,5 +267,6 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/install.js"></script>
 <script src="assets/js/globe.js"></script>
+<script src="assets/js/daily-word.js"></script>
 </body>
 </html>
