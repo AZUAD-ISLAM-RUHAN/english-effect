@@ -55,6 +55,7 @@ var SITE = {
               '<a href="pte-calculator.html"><span class="chip c-pte">PTE</span><span><b>PTE Score Checker</b><small>Your score vs your target</small></span></a>' +
               '<a href="games.html"><span class="chip c-kids">PLAY</span><span><b>Practice Games</b><small>Typing test, spelling game</small></span></a>' +
               '<a href="daily-word.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 7h6M9 11h4"/></svg></span><span><b>Word of the Day</b><small>One useful word a day</small></span></a>' +
+              '<a href="study-plan.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM4 10h16M8 2v4M16 2v4"/></svg></span><span><b>Study Plan Maker</b><small>Week-by-week IELTS or PTE plan</small></span></a>' +
             '</div></div>' +
           '<a href="free-class.html" data-nav="free">Free Class</a>' +
           '<div class="drop drop-sm" data-nav="about"><button type="button" aria-expanded="false">About <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +
@@ -64,6 +65,7 @@ var SITE = {
               '<a href="contact.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></span><span><b>Contact</b><small>WhatsApp, email</small></span></a>' +
             '</div></div>' +
           '<button type="button" class="btn btn-ghost btn-sm" data-install-app>Install app</button>' +  // install.js dekhay/lukay
+          '<div data-lang-switch></div>' +  // lang.js EN / বাং switch boshay
           '<a href="enroll.html" class="btn btn-green btn-sm">Enroll now</a>' +
         '</nav>' +
       '</div></header>';
