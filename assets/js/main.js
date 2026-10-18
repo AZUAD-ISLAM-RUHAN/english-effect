@@ -273,8 +273,8 @@ var SITE = {
   });
 
   /* ---------- 13. Enroll form ----------
-     Netlify te (ba asol domain e) form ta Netlify Forms e jabe.
-     Local test (Live Server) ba preview te shudhu thanks page dekhabe. */
+     Netlify te (ba asol domain e) form ta Web3Forms e jabe (email e ashe).
+     Local test (Live Server) ba preview te shudhu thanks page dekhabe, asol email jay na. */
   var form = document.getElementById("enrollForm");
   if (form) {
     var hostOk = /netlify\.app$/.test(location.hostname) || location.hostname.indexOf(SITE.domain) > -1;

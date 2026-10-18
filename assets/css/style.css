@@ -654,6 +654,7 @@ tbody tr:last-child > * { border-bottom: 0; }
 .form-note { font-size: .88rem; color: var(--muted); margin-top: .4rem; }
 .form-note.ok { color: var(--green-dk); font-weight: 600; }
 .hidden-field { position: absolute; left: -9999px; }
+.botcheck { display: none; }  /* Web3Forms spam trap: bots tick it, people never see it */
 
 /* ---------- FAQ ---------- */
 .faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 3.5rem; align-items: start; }

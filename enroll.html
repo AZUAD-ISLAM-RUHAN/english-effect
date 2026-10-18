@@ -65,9 +65,13 @@
         <p class="bn" style="margin-top:2rem;color:var(--muted)" data-reveal data-en="If you want to enroll from abroad, you can pay by transfer to the bank account above. If you have any questions, &lt;a href=&quot;contact.html&quot; class=&quot;link&quot;&gt;contact us&lt;/a&gt;.">দেশের বাইরে থেকে ভর্তি হতে চাইলে উপরের ব্যাংক অ্যাকাউন্টে ট্রান্সফার করে পেমেন্ট করা যায়। কোনো প্রশ্ন থাকলে <a href="contact.html" class="link">যোগাযোগ করুন</a>।</p>
       </div>
 
-      <form class="form" id="enrollForm" name="enroll" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" data-reveal>
-        <input type="hidden" name="form-name" value="enroll">
-        <p class="hidden-field"><label>Leave empty <input name="bot-field"></label></p>
+      <form class="form" id="enrollForm" name="enroll" method="POST" action="https://api.web3forms.com/submit" data-reveal>
+        <!-- Web3Forms: submission email e jay. Key ta public, eta HTML e thakai niyom. -->
+        <input type="hidden" name="access_key" value="8f85d2f6-5b3a-4f56-877f-195237b38c33">
+        <input type="hidden" name="subject" value="New enrollment - English Effect">
+        <input type="hidden" name="from_name" value="English Effect Website">
+        <input type="hidden" name="redirect" value="https://englisheffectbd.com/thanks.html">
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h2 data-bn="ভর্তি ফর্ম">Enrollment form</h2>
         <label for="f-name" data-bn="পুরো নাম">Full name</label>
         <input id="f-name" name="name" required autocomplete="name">
