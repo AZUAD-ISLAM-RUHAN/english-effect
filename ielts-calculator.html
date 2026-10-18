@@ -33,23 +33,23 @@
   <section class="page-hero">
     <span class="ghost" aria-hidden="true">BAND</span>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Practice</a></span><span>IELTS calculator</span></nav>
-      <h1>IELTS band score calculator</h1>
-      <p class="bn">চারটা অংশের band দিলে overall band বের হবে, অফিশিয়াল rounding নিয়ম মেনে। Listening আর Reading এর সঠিক উত্তরের সংখ্যা থেকেও band দেখতে পারবেন।</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-bn="হোম">Home</a><span><a href="games.html" data-bn="প্র্যাকটিস">Practice</a></span><span data-bn="IELTS ক্যালকুলেটর">IELTS calculator</span></nav>
+      <h1 data-bn="IELTS band স্কোর ক্যালকুলেটর">IELTS band score calculator</h1>
+      <p class="bn" data-en="Enter the band for all four sections to get your overall band, using the official rounding rule. You can also see the band from the number of correct answers in Listening and Reading.">চারটা অংশের band দিলে overall band বের হবে, অফিশিয়াল rounding নিয়ম মেনে। Listening আর Reading এর সঠিক উত্তরের সংখ্যা থেকেও band দেখতে পারবেন।</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap cl-wrap" id="ielts-calc">
       <div class="cl-tabs" role="tablist">
-        <button type="button" role="tab" data-tab="overall" aria-selected="true">Overall band</button>
-        <button type="button" role="tab" data-tab="raw" aria-selected="false">Raw score → band</button>
+        <button type="button" role="tab" data-tab="overall" aria-selected="true" data-bn="সামগ্রিক band">Overall band</button>
+        <button type="button" role="tab" data-tab="raw" aria-selected="false" data-bn="সঠিক উত্তর → band">Raw score → band</button>
       </div>
 
       <div class="cl-panel" data-panel="overall">
         <div class="cl-grid">
           <div class="cl-card">
-            <h2>Your section bands</h2>
+            <h2 data-bn="আপনার প্রতিটা অংশের band">Your section bands</h2>
           <div class="cl-skill">
             <label for="ov-l">Listening</label>
             <div class="cl-step">
@@ -92,11 +92,11 @@
           </div>
           </div>
           <div class="cl-result">
-            <small>Overall band</small>
+            <small data-bn="সামগ্রিক band">Overall band</small>
             <b id="ov-band" class="cl-big">0.0</b>
             <p class="cl-math" id="ov-math"></p>
             <p class="cl-tip bn" id="ov-tip"></p>
-            <div class="cl-rule bn"><b>Rounding rule</b>চার অংশের গড় নিকটতম হাফ band এ রাউন্ড হয়। গড় .25 হলে উপরের হাফ band (6.25 → 6.5), .75 হলে পরের পুরো band (6.75 → 7.0)।</div>
+            <div class="cl-rule bn" data-en="&lt;b&gt;Rounding rule&lt;/b&gt;The average of the four sections is rounded to the nearest half band. An average ending in .25 goes up to the next half band (6.25 → 6.5), and .75 goes up to the next whole band (6.75 → 7.0)."><b>Rounding rule</b>চার অংশের গড় নিকটতম হাফ band এ রাউন্ড হয়। গড় .25 হলে উপরের হাফ band (6.25 → 6.5), .75 হলে পরের পুরো band (6.75 → 7.0)।</div>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
       <div class="cl-panel" data-panel="raw" hidden>
         <div class="cl-grid">
           <div class="cl-card">
-            <h2>Correct answers (out of 40)</h2>
+            <h2 data-bn="সঠিক উত্তর (৪০ এর মধ্যে)">Correct answers (out of 40)</h2>
             <div class="seg" role="group" aria-label="Test type">
               <button type="button" data-type="academic" aria-pressed="true">Academic</button>
               <button type="button" data-type="general" aria-pressed="false">General Training</button>
@@ -126,7 +126,7 @@
               <div><small id="raw-r-label">Academic Reading</small><b id="raw-r-band" class="cl-big sm">0.0</b></div>
             </div>
             <button type="button" class="btn btn-green btn-block" id="raw-use">Use in overall calculator</button>
-            <p class="cl-note bn">এই রূপান্তর আনুমানিক। IELTS নিজেই বলে প্রতিটা টেস্ট ভার্সনে band এর জন্য দরকারি নম্বর সামান্য আলাদা হতে পারে।</p>
+            <p class="cl-note bn" data-en="This conversion is approximate. IELTS itself says the marks needed for each band can vary slightly between test versions.">এই রূপান্তর আনুমানিক। IELTS নিজেই বলে প্রতিটা টেস্ট ভার্সনে band এর জন্য দরকারি নম্বর সামান্য আলাদা হতে পারে।</p>
           </div>
         </div>
       </div>
@@ -135,8 +135,8 @@
 
   <section class="section section-soft">
     <div class="wrap cl-cta">
-      <div><h2 class="h2">Want to know your real band?</h2><p class="lead bn">ফ্রি মক টেস্ট দিন, অথবা IELTS কোর্সে ভর্তি হন।</p></div>
-      <div class="btn-row"><a href="mock-test.html" class="btn btn-green">Try a mock test</a><a href="ielts.html" class="btn btn-ghost">IELTS course</a></div>
+      <div><h2 class="h2" data-bn="আপনার আসল band জানতে চান?">Want to know your real band?</h2><p class="lead bn" data-en="Take a free mock test, or enroll in the IELTS course.">ফ্রি মক টেস্ট দিন, অথবা IELTS কোর্সে ভর্তি হন।</p></div>
+      <div class="btn-row"><a href="mock-test.html" class="btn btn-green" data-bn="একটা মক টেস্ট দিন">Try a mock test</a><a href="ielts.html" class="btn btn-ghost" data-bn="IELTS কোর্স">IELTS course</a></div>
     </div>
   </section>
 </main>
