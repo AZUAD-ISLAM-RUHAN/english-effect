@@ -33,9 +33,9 @@
   <section class="page-hero ">
     <span class="ghost" aria-hidden="true">WPM</span>
     <div class="wrap">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Games</a></span><span>Typing Speed Test</span></nav>
-      <h1>Typing Speed Test</h1>
-      <p class="bn">টাইপ করা শুরু করলেই টাইমার চালু হবে। ভুল হলে Backspace দিয়ে ঠিক করুন। শেষে আপনার WPM আর নির্ভুলতা দেখাবে।</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-bn="হোম">Home</a><span><a href="games.html" data-bn="গেম">Games</a></span><span data-bn="টাইপিং স্পিড টেস্ট">Typing Speed Test</span></nav>
+      <h1 data-bn="টাইপিং স্পিড টেস্ট">Typing Speed Test</h1>
+      <p class="bn" data-en="The timer starts as soon as you begin typing. Fix mistakes with Backspace. At the end you will see your WPM and accuracy.">টাইপ করা শুরু করলেই টাইমার চালু হবে। ভুল হলে Backspace দিয়ে ঠিক করুন। শেষে আপনার WPM আর নির্ভুলতা দেখাবে।</p>
       
     </div>
   </section>
@@ -44,9 +44,9 @@
     <div class="wrap game">
       <div class="toolbar">
         <div class="seg" role="group" aria-label="Text type">
-          <button type="button" data-mode="words" aria-pressed="true">Common words</button>
-          <button type="button" data-mode="sentences" aria-pressed="false">Sentences</button>
-          <button type="button" data-mode="academic" aria-pressed="false">IELTS / PTE words</button>
+          <button type="button" data-mode="words" aria-pressed="true" data-bn="সাধারণ শব্দ">Common words</button>
+          <button type="button" data-mode="sentences" aria-pressed="false" data-bn="বাক্য">Sentences</button>
+          <button type="button" data-mode="academic" aria-pressed="false" data-bn="IELTS / PTE এর শব্দ">IELTS / PTE words</button>
         </div>
         <div class="seg" role="group" aria-label="Duration">
           <button type="button" data-dur="30" aria-pressed="false">30s</button>
@@ -57,9 +57,9 @@
       <div class="panel">
         <div class="tt-stats">
           <div class="tt-timer"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" id="tt-ring" cx="50" cy="50" r="42"/></svg><b id="tt-time">60</b></div>
-          <div class="stat"><small>Speed</small><b><span id="tt-wpm">0</span> <span style="font-size:.9rem;color:var(--muted)">WPM</span></b></div>
-          <div class="stat"><small>Accuracy</small><b id="tt-acc">100%</b></div>
-          <div class="stat"><small>Your best</small><b id="tt-best">—</b></div>
+          <div class="stat"><small data-bn="গতি">Speed</small><b><span id="tt-wpm">0</span> <span style="font-size:.9rem;color:var(--muted)">WPM</span></b></div>
+          <div class="stat"><small data-bn="নির্ভুলতা">Accuracy</small><b id="tt-acc">100%</b></div>
+          <div class="stat"><small data-bn="আপনার সেরা">Your best</small><b id="tt-best">—</b></div>
         </div>
 
         <div class="tt-area">
@@ -69,23 +69,23 @@
         </div>
 
         <div class="tt-foot">
-          <span><kbd>Esc</kbd> restart &nbsp;·&nbsp; <span class="bn">সবুজ = ঠিক, লাল = ভুল</span></span>
+          <span data-en="&lt;kbd&gt;Esc&lt;/kbd&gt; restart &amp;nbsp;·&amp;nbsp; &lt;span class=&quot;bn&quot;&gt;green = correct, red = wrong&lt;/span&gt;"><kbd>Esc</kbd> restart &nbsp;·&nbsp; <span class="bn">সবুজ = ঠিক, লাল = ভুল</span></span>
           <button type="button" class="btn btn-ghost btn-sm" id="tt-restart">New text</button>
         </div>
 
         <div class="result" id="tt-result" hidden>
           <div>
-            <h2>Your result</h2>
+            <h2 data-bn="আপনার ফলাফল">Your result</h2>
             <div class="big">
-              <div><b id="tr-wpm">0</b><small>words per minute</small></div>
-              <div><b id="tr-acc">0%</b><small>accuracy</small></div>
-              <div><b id="tr-words">0</b><small>words typed</small></div>
+              <div><b id="tr-wpm">0</b><small data-bn="প্রতি মিনিটে শব্দ">words per minute</small></div>
+              <div><b id="tr-acc">0%</b><small data-bn="নির্ভুলতা">accuracy</small></div>
+              <div><b id="tr-words">0</b><small data-bn="টাইপ করা শব্দ">words typed</small></div>
             </div>
             <span class="new-best" id="tr-badge" hidden>New personal best</span>
             <p class="bn" id="tr-note"></p>
             <div class="btn-row" style="justify-content:center">
               <button type="button" class="btn btn-green" id="tr-again">Try again</button>
-              <a href="pte.html" class="btn btn-outline">PTE course</a>
+              <a href="pte.html" class="btn btn-outline" data-bn="PTE কোর্স">PTE course</a>
             </div>
           </div>
         </div>
