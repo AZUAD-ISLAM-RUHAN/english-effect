@@ -131,6 +131,8 @@ two FAQ answers (verify time, exam registration).
 - Local: open the folder in VS Code, right-click index.html, "Open with Live Server".
 - The enrollment form (enroll.html) posts to Web3Forms (`https://api.web3forms.com/submit`,
   `access_key` hidden input) and the submission arrives by email. Spam trap: the hidden
-  `botcheck` checkbox. Web3Forms then redirects to thanks.html. Free plan: no file uploads.
+  `botcheck` checkbox. Free plan: no file uploads, and Web3Forms only redirects to the same
+  domain, so main.js (section 13) sends the form with fetch and opens thanks.html itself.
+  On failure it shows a red message in `#formNote`. The `redirect` input is the no-JS fallback.
   It submits from anywhere, including Live Server, so a local test sends a real email.
 - Deploy: push to GitHub; Netlify auto-deploys from the main branch.

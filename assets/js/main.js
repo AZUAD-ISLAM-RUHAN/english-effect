@@ -270,6 +270,30 @@ var SITE = {
     });
   });
 
+  /* ---------- 13. Enroll form (Web3Forms) ----------
+     Free plan e Web3Forms onno domain e redirect kore na, tai form ta JS diye pathai
+     ar success hole nijerai thanks.html e niye jai (local, netlify.app, asol domain shob jaygay).
+     JS na cholle form ta normal HTML form hishebe jay. */
+  var enroll = document.getElementById("enrollForm");
+  if (enroll && window.fetch) {
+    enroll.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bot = enroll.querySelector('[name="botcheck"]');
+      if (bot && bot.checked) return;   // spam bot
+      var btn = enroll.querySelector('button[type="submit"]'), note = document.getElementById("formNote");
+      var label = btn.innerHTML;
+      btn.disabled = true; btn.textContent = "Sending...";
+      var fail = function () {
+        btn.disabled = false; btn.innerHTML = label;
+        if (note) { note.className = "form-note err bn"; note.textContent = "জমা দেওয়া যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন, না হলে WhatsApp এ যোগাযোগ করুন।"; }
+      };
+      fetch(enroll.action, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(enroll) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.success) location.href = "thanks.html"; else fail(); })
+        .catch(fail);
+    });
+  }
+
   /* ---------- 14. Home hero flight ---------- */
   var hero = document.getElementById("hero"), route = document.getElementById("route");
   if (hero && route) {
