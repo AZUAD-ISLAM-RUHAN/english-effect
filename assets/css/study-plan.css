@@ -49,6 +49,63 @@
 .sp-weeks ul li::marker { color: var(--green); }
 .sp-note { font-size: .88rem; color: var(--muted); }
 
+/* ---------- PDF / print layout (study-plan.js builds .pdf-doc) ----------
+   A4 (190mm wide inside 10mm margins), white, no animation. .pdf-keep never splits across pages. */
+.pdf-holder { position: fixed; left: -10000px; top: 0; width: 190mm; pointer-events: none; }
+.pdf-print { display: none; }
+.pdf-doc { background: #fff; color: var(--ink); font-family: var(--font); font-size: 12px; line-height: 1.5; }
+.pdf-doc * { animation: none !important; transition: none !important; }
+.pdf-keep { break-inside: avoid; page-break-inside: avoid; }
+.pdf-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 12px; border-bottom: 3px solid var(--green); }
+.pdf-head img { height: 46px; width: auto; }
+.pdf-head small { display: block; text-align: right; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--green-dk); }
+.pdf-head h1 { margin: 0; text-align: right; font-size: 24px; font-weight: 900; line-height: 1.2; letter-spacing: -.02em; color: var(--dark); }
+.pdf-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0 4px; }
+.pdf-facts div { padding: 7px 10px; border-radius: 8px; background: var(--soft); border: 1px solid var(--line); }
+.pdf-facts small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.pdf-facts b { font-size: 13px; font-weight: 800; color: var(--dark); }
+.pdf-warn { margin: 10px 0 0; padding: 8px 12px; border-left: 4px solid var(--yellow); border-radius: 6px; background: #FFF6D6; font-weight: 600; }
+.pdf-sec { padding-top: 14px; }   /* space above as padding, not margin, so it stays inside the unsplittable block */
+.pdf-doc h2 { margin: 0 0 6px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--green-dk); }
+.pdf-bar { display: flex; gap: 3px; border-radius: 8px; overflow: hidden; }
+.pdf-bar div { min-width: 0; padding: 6px 8px; }
+.pdf-bar b { display: block; font-size: 11px; white-space: nowrap; overflow: hidden; }
+.pdf-bar span { font-size: 10px; }
+.pdf-doc .p0 { background: var(--lime); color: var(--dark); }
+.pdf-doc .p1 { background: var(--green); color: var(--white); }
+.pdf-doc .p2 { background: var(--dark); color: var(--white); }
+.pdf-bar .s { background: var(--soft); color: var(--ink); }
+.pdf-bar .s.weak { background: var(--yellow); }
+.pdf-row { display: flex; gap: 10px; padding-top: 10px; }   /* gap above as padding: html2pdf page breaks can be a few px off, this keeps card edges off the previous page */
+.pdf-doc .pdf-wk { flex: 1 1 0; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: 10px; background: #fff; color: var(--ink); }
+.pdf-doc .pdf-wk.p0 { border-top-color: var(--lime); }
+.pdf-doc .pdf-wk.p2 { border-top-color: var(--dark); }
+.pdf-doc .pdf-blank { visibility: hidden; }
+.pdf-wk-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.pdf-wk-head b { font-size: 14px; font-weight: 900; color: var(--dark); }
+.pdf-wk-head span { padding: 2px 8px; border-radius: 999px; font-size: 9px; font-weight: 800; }
+.pdf-wk p { margin: 4px 0 6px; font-size: 11px; color: var(--muted); }
+.pdf-wk ul { list-style: none; margin: 0; padding: 0; font-size: 11px; }
+.pdf-wk li { position: relative; padding-left: 12px; margin-bottom: 3px; }
+.pdf-wk li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+.pdf-note { margin: 0 0 10px; font-size: 10px; color: var(--muted); }
+.pdf-strip { padding: 10px 14px; border-radius: 10px; background: var(--dark); color: var(--white); font-size: 11px; font-weight: 600; text-align: center; }
+.pdf-strip b { color: var(--yellow); font-weight: 800; }
+
+/* Print: the Download PDF fallback prints only the plan (body.sp-printing).
+   A normal Ctrl+P prints the page without header, footer, form and buttons. */
+@media print {
+  @page { size: A4; margin: 10mm; }
+  body { background: #fff; animation: none; }
+  body.sp-printing > *:not(.pdf-print) { display: none !important; }
+  body.sp-printing .pdf-print { display: block; }
+  .pdf-doc, .sp-result { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .fbar, .nav, .progress, .footer, #waFloat, #toTop, #sp-form, .btn-row, .page-hero .ghost { display: none !important; }
+  .sp-grid { grid-template-columns: 1fr; }
+  .sp-phases div, .sp-split div, .sp-weeks > li, .sp-sum { animation: none !important; }
+  .sp-weeks > li, .sp-day, .sp-sum { break-inside: avoid; }
+}
+
 @media (max-width: 900px) {
   .sp-grid { grid-template-columns: 1fr; }
   .sp-card { position: relative; top: auto; }

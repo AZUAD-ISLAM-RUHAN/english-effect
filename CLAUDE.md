@@ -22,6 +22,12 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 - Home "Today on English Effect" section (`.today-sec`, right after the hero): 4 cards,
   word of the day, level test, study plan maker, IELTS & PTE calculators (2x2 below 1080px).
   It replaced the old home "Free tools" section, so don't add a second tools section.
+- Study plan maker (`study-plan.html`, `assets/js/study-plan.js`, `assets/css/study-plan.css`).
+  "Download PDF" uses html2pdf.js 0.10.1 from cdnjs (with SRI), loaded only on that page.
+  The PDF is a separate white A4 layout (`.pdf-doc`); `.pdf-keep` blocks never split across
+  pages, and spacing above blocks is padding (not margin) so page breaks stay clean. It waits
+  for Hind Siliguri and Montserrat before rendering. If the library fails it prints the same
+  layout with `window.print()` (print CSS in study-plan.css). File: EnglishEffect-StudyPlan-IELTS-7.0.pdf.
 - `module.html`: ONE template for every PTE/IELTS package (`module.html?exam=pte&module=writing`).
   Its content comes from `assets/js/courses-data.js` through `assets/js/packages.js`.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.

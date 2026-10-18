@@ -2,7 +2,7 @@
    Network first: online thakle shob shomoy notun version dekhabe.
    Offline hole shesh dekha version (ba offline.html) dekhabe.
    Boro change er por VERSION number barale purono cache muche jabe. */
-var VERSION = "ee-v11";
+var VERSION = "ee-v12";
 var CORE = ["/", "/offline.html", "/assets/css/style.css", "/assets/js/main.js", "/assets/images/logo.png", "/assets/images/icons/icon-192.png"];
 
 self.addEventListener("install", function (e) {
