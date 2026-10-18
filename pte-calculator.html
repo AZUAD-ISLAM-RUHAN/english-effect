@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PTE Score Target Checker | English Effect</title>
+  <meta name="description" content="Compare your PTE Academic skill scores with your target and see exactly how many points each skill needs.">
+  <meta name="theme-color" content="#0F2A33">
+  <!-- Share preview (Open Graph). Notun page e copy koro: title, description, url bodlao. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="English Effect">
+  <meta property="og:title" content="PTE Score Target Checker | English Effect">
+  <meta property="og:description" content="Compare your PTE Academic skill scores with your target and see exactly how many points each skill needs.">
+  <meta property="og:url" content="https://englisheffectbd.com/pte-calculator.html">
+  <meta property="og:image" content="https://englisheffectbd.com/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://englisheffectbd.com/pte-calculator.html">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/calc.css">
+</head>
+<body data-page="tools">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero">
+    <span class="ghost" aria-hidden="true">PTE</span>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Practice</a></span><span>PTE calculator</span></nav>
+      <h1>PTE score target checker</h1>
+      <p class="bn">আপনার Listening, Reading, Speaking আর Writing স্কোর দিন, আর আপনার university বা ভিসার টার্গেট। প্রতিটা অংশে আর কত লাগবে দেখে নিন।</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cl-wrap" id="pte-calc">
+      <div class="cl-grid">
+        <div class="cl-card">
+          <h2>Your scores (10–90)</h2>
+            <div class="cl-raw">
+              <label for="ps-listening-n">Listening</label>
+              <input type="range" id="ps-listening" min="10" max="90" value="62" aria-label="Listening">
+              <input type="number" id="ps-listening-n" min="10" max="90" value="62">
+            </div>            <div class="cl-raw">
+              <label for="ps-reading-n">Reading</label>
+              <input type="range" id="ps-reading" min="10" max="90" value="58" aria-label="Reading">
+              <input type="number" id="ps-reading-n" min="10" max="90" value="58">
+            </div>            <div class="cl-raw">
+              <label for="ps-speaking-n">Speaking</label>
+              <input type="range" id="ps-speaking" min="10" max="90" value="66" aria-label="Speaking">
+              <input type="number" id="ps-speaking-n" min="10" max="90" value="66">
+            </div>            <div class="cl-raw">
+              <label for="ps-writing-n">Writing</label>
+              <input type="range" id="ps-writing" min="10" max="90" value="64" aria-label="Writing">
+              <input type="number" id="ps-writing-n" min="10" max="90" value="64">
+            </div>
+          <h2 class="cl-h2b">Your target</h2>
+          <label class="cl-check"><input type="checkbox" id="pt-same" checked> Same target for every skill</label>
+          <div id="pt-one">
+            <div class="cl-presets"><span>Quick pick:</span><button type="button" data-preset="50">50</button><button type="button" data-preset="58">58</button><button type="button" data-preset="65">65</button><button type="button" data-preset="79">79</button></div>
+            <div class="cl-raw">
+              <label for="pt-all-n">All skills</label>
+              <input type="range" id="pt-all" min="10" max="90" value="65" aria-label="All skills">
+              <input type="number" id="pt-all-n" min="10" max="90" value="65">
+            </div>
+          </div>
+          <div id="pt-each" hidden>
+            <div class="cl-raw">
+              <label for="pt-listening-n">Listening</label>
+              <input type="range" id="pt-listening" min="10" max="90" value="65" aria-label="Listening">
+              <input type="number" id="pt-listening-n" min="10" max="90" value="65">
+            </div>            <div class="cl-raw">
+              <label for="pt-reading-n">Reading</label>
+              <input type="range" id="pt-reading" min="10" max="90" value="65" aria-label="Reading">
+              <input type="number" id="pt-reading-n" min="10" max="90" value="65">
+            </div>            <div class="cl-raw">
+              <label for="pt-speaking-n">Speaking</label>
+              <input type="range" id="pt-speaking" min="10" max="90" value="65" aria-label="Speaking">
+              <input type="number" id="pt-speaking-n" min="10" max="90" value="65">
+            </div>            <div class="cl-raw">
+              <label for="pt-writing-n">Writing</label>
+              <input type="range" id="pt-writing" min="10" max="90" value="65" aria-label="Writing">
+              <input type="number" id="pt-writing-n" min="10" max="90" value="65">
+            </div>
+          </div>
+        </div>
+        <div class="cl-result">
+          <div class="pr-top">
+            <div class="pr-ring" id="pr-ring"><b id="pr-met">0</b><span>/ 4</span></div>
+            <div><small>Skills at target</small><p class="bn" id="pr-summary"></p></div>
+          </div>
+            <div class="pr-row" id="pr-listening">
+              <div class="pr-head"><span>Listening</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
+              <div class="pr-track"><i class="pr-fill"></i><span class="pr-target" aria-hidden="true"></span></div>
+            </div>            <div class="pr-row" id="pr-reading">
+              <div class="pr-head"><span>Reading</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
+              <div class="pr-track"><i class="pr-fill"></i><span class="pr-target" aria-hidden="true"></span></div>
+            </div>            <div class="pr-row" id="pr-speaking">
+              <div class="pr-head"><span>Speaking</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
+              <div class="pr-track"><i class="pr-fill"></i><span class="pr-target" aria-hidden="true"></span></div>
+            </div>            <div class="pr-row" id="pr-writing">
+              <div class="pr-head"><span>Writing</span><b class="pr-score">0</b><span class="pr-status">-</span></div>
+              <div class="pr-track"><i class="pr-fill"></i><span class="pr-target" aria-hidden="true"></span></div>
+            </div>
+          <div class="pr-legend"><span><i class="pr-lg-fill"></i>Your score</span><span><i class="pr-lg-target"></i>Target</span></div>
+          <p class="cl-note bn">চার অংশের সাধারণ গড়: <b id="pr-avg">0</b>। এটা শুধু একটা ধারণা, PTE এর অফিশিয়াল overall score এভাবে হিসাব হয় না। কোন স্কোর লাগবে তা আপনার university বা ভিসার শর্তে দেখে নিন।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap cl-cta">
+      <div><h2 class="h2">Short of your target?</h2><p class="lead bn">যে অংশে স্কোর কম, সেই মডিউলটা আলাদা করে নিতে পারেন, অথবা ফ্রি মক টেস্ট দিয়ে দেখুন।</p></div>
+      <div class="btn-row"><a href="pte.html" class="btn btn-green">PTE packages</a><a href="mock-test.html" class="btn btn-ghost">Try a mock test</a></div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/install.js"></script>
+<script src="assets/js/calc.js"></script>
+</body>
+</html>

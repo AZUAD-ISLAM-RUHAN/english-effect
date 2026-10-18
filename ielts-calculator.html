@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IELTS Band Score Calculator | English Effect</title>
+  <meta name="description" content="Calculate your overall IELTS band from four section scores, and convert Listening and Reading raw scores to bands.">
+  <meta name="theme-color" content="#0F2A33">
+  <!-- Share preview (Open Graph). Notun page e copy koro: title, description, url bodlao. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="English Effect">
+  <meta property="og:title" content="IELTS Band Score Calculator | English Effect">
+  <meta property="og:description" content="Calculate your overall IELTS band from four section scores, and convert Listening and Reading raw scores to bands.">
+  <meta property="og:url" content="https://englisheffectbd.com/ielts-calculator.html">
+  <meta property="og:image" content="https://englisheffectbd.com/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://englisheffectbd.com/ielts-calculator.html">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/calc.css">
+</head>
+<body data-page="tools">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero">
+    <span class="ghost" aria-hidden="true">BAND</span>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="games.html">Practice</a></span><span>IELTS calculator</span></nav>
+      <h1>IELTS band score calculator</h1>
+      <p class="bn">চারটা অংশের band দিলে overall band বের হবে, অফিশিয়াল rounding নিয়ম মেনে। Listening আর Reading এর সঠিক উত্তরের সংখ্যা থেকেও band দেখতে পারবেন।</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cl-wrap" id="ielts-calc">
+      <div class="cl-tabs" role="tablist">
+        <button type="button" role="tab" data-tab="overall" aria-selected="true">Overall band</button>
+        <button type="button" role="tab" data-tab="raw" aria-selected="false">Raw score → band</button>
+      </div>
+
+      <div class="cl-panel" data-panel="overall">
+        <div class="cl-grid">
+          <div class="cl-card">
+            <h2>Your section bands</h2>
+          <div class="cl-skill">
+            <label for="ov-l">Listening</label>
+            <div class="cl-step">
+              <button type="button" data-step="l" data-d="-0.5" aria-label="Lower Listening band">−</button>
+              <select id="ov-l"></select>
+              <button type="button" data-step="l" data-d="0.5" aria-label="Raise Listening band">+</button>
+            </div>
+            <div class="cl-bar"><i id="ov-bar-l"></i></div>
+            <span class="cl-val" id="ov-val-l">0.0</span>
+          </div>
+          <div class="cl-skill">
+            <label for="ov-r">Reading</label>
+            <div class="cl-step">
+              <button type="button" data-step="r" data-d="-0.5" aria-label="Lower Reading band">−</button>
+              <select id="ov-r"></select>
+              <button type="button" data-step="r" data-d="0.5" aria-label="Raise Reading band">+</button>
+            </div>
+            <div class="cl-bar"><i id="ov-bar-r"></i></div>
+            <span class="cl-val" id="ov-val-r">0.0</span>
+          </div>
+          <div class="cl-skill">
+            <label for="ov-w">Writing</label>
+            <div class="cl-step">
+              <button type="button" data-step="w" data-d="-0.5" aria-label="Lower Writing band">−</button>
+              <select id="ov-w"></select>
+              <button type="button" data-step="w" data-d="0.5" aria-label="Raise Writing band">+</button>
+            </div>
+            <div class="cl-bar"><i id="ov-bar-w"></i></div>
+            <span class="cl-val" id="ov-val-w">0.0</span>
+          </div>
+          <div class="cl-skill">
+            <label for="ov-s">Speaking</label>
+            <div class="cl-step">
+              <button type="button" data-step="s" data-d="-0.5" aria-label="Lower Speaking band">−</button>
+              <select id="ov-s"></select>
+              <button type="button" data-step="s" data-d="0.5" aria-label="Raise Speaking band">+</button>
+            </div>
+            <div class="cl-bar"><i id="ov-bar-s"></i></div>
+            <span class="cl-val" id="ov-val-s">0.0</span>
+          </div>
+          </div>
+          <div class="cl-result">
+            <small>Overall band</small>
+            <b id="ov-band" class="cl-big">0.0</b>
+            <p class="cl-math" id="ov-math"></p>
+            <p class="cl-tip bn" id="ov-tip"></p>
+            <div class="cl-rule bn"><b>Rounding rule</b>চার অংশের গড় নিকটতম হাফ band এ রাউন্ড হয়। গড় .25 হলে উপরের হাফ band (6.25 → 6.5), .75 হলে পরের পুরো band (6.75 → 7.0)।</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cl-panel" data-panel="raw" hidden>
+        <div class="cl-grid">
+          <div class="cl-card">
+            <h2>Correct answers (out of 40)</h2>
+            <div class="seg" role="group" aria-label="Test type">
+              <button type="button" data-type="academic" aria-pressed="true">Academic</button>
+              <button type="button" data-type="general" aria-pressed="false">General Training</button>
+            </div>
+            <div class="cl-raw">
+              <label for="raw-l-n">Listening</label>
+              <input type="range" id="raw-l" min="0" max="40" value="30" aria-label="Listening correct answers">
+              <input type="number" id="raw-l-n" min="0" max="40" value="30">
+            </div>
+            <div class="cl-raw">
+              <label for="raw-r-n">Reading</label>
+              <input type="range" id="raw-r" min="0" max="40" value="27" aria-label="Reading correct answers">
+              <input type="number" id="raw-r-n" min="0" max="40" value="27">
+            </div>
+          </div>
+          <div class="cl-result">
+            <div class="cl-two">
+              <div><small>Listening</small><b id="raw-l-band" class="cl-big sm">0.0</b></div>
+              <div><small id="raw-r-label">Academic Reading</small><b id="raw-r-band" class="cl-big sm">0.0</b></div>
+            </div>
+            <button type="button" class="btn btn-green btn-block" id="raw-use">Use in overall calculator</button>
+            <p class="cl-note bn">এই রূপান্তর আনুমানিক। IELTS নিজেই বলে প্রতিটা টেস্ট ভার্সনে band এর জন্য দরকারি নম্বর সামান্য আলাদা হতে পারে।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap cl-cta">
+      <div><h2 class="h2">Want to know your real band?</h2><p class="lead bn">ফ্রি মক টেস্ট দিন, অথবা IELTS কোর্সে ভর্তি হন।</p></div>
+      <div class="btn-row"><a href="mock-test.html" class="btn btn-green">Try a mock test</a><a href="ielts.html" class="btn btn-ghost">IELTS course</a></div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/install.js"></script>
+<script src="assets/js/calc.js"></script>
+</body>
+</html>

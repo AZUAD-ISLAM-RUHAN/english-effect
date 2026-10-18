@@ -1,0 +1,97 @@
+/* =========================================================
+   English Effect — Score calculators (ielts-calculator.html, pte-calculator.html)
+   ========================================================= */
+.cl-wrap { max-width: 1080px; }
+.cl-tabs { display: inline-flex; gap: .3rem; padding: 5px; margin-bottom: 1.4rem; border-radius: 14px; background: var(--soft); border: 1px solid var(--line); }
+.cl-tabs button { font: 700 .92rem var(--font); padding: .7rem 1.2rem; border: 0; border-radius: 10px; background: transparent; color: var(--muted); cursor: pointer; transition: background .25s, color .25s; }
+.cl-tabs button[aria-selected="true"] { background: var(--dark); color: var(--white); }
+.cl-panel { animation: rise .45s var(--ease); }
+
+.cl-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; align-items: start; }
+.cl-card, .cl-result { padding: 1.8rem; border-radius: 22px; min-width: 0; }
+.cl-card { background: var(--white); border: 1px solid var(--line); display: grid; gap: 1.1rem; }
+.cl-card h2 { font-size: 1.15rem; font-weight: 800; }
+.cl-h2b { margin-top: .6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.cl-result { position: sticky; top: 100px; background: var(--dark); color: var(--white); display: grid; gap: 1rem; overflow: hidden; isolation: isolate; }
+.cl-result::before { content: ""; position: absolute; z-index: -1; width: 340px; aspect-ratio: 1; right: -120px; top: -140px; border-radius: 50%; background: radial-gradient(circle, rgba(59,166,47,.45), transparent 65%); }
+.cl-result small { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+
+.cl-big { display: block; font-size: clamp(4.5rem, 10vw, 6.5rem); font-weight: 900; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.cl-big.sm { font-size: clamp(2.8rem, 6vw, 3.6rem); margin-top: .3rem; }
+.cl-big.pop { animation: bigpop .45s var(--ease); }
+@keyframes bigpop { 40% { transform: scale(1.06); color: var(--yellow); } }
+.cl-math { font-size: .92rem; color: rgba(255,255,255,.75); font-variant-numeric: tabular-nums; }
+.cl-math b { color: var(--white); }
+.cl-tip { color: var(--yellow); font-weight: 600; min-height: 1.4em; }
+.cl-rule { padding: .9rem 1rem; border-radius: 12px; background: rgba(255,255,255,.06); font-size: .9rem; color: rgba(255,255,255,.75); }
+.cl-rule b { display: block; color: var(--white); font-family: var(--font); margin-bottom: .2rem; }
+.cl-note { font-size: .85rem; color: rgba(255,255,255,.6); }
+.cl-note b { color: var(--white); }
+.cl-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.cl-skill { display: grid; grid-template-columns: 90px auto 1fr 40px; gap: .8rem; align-items: center; }
+.cl-skill label { font-weight: 700; font-size: .93rem; }
+.cl-step { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 11px; overflow: hidden; }
+.cl-step button { width: 36px; height: 40px; border: 0; background: var(--soft); font: 800 1.1rem var(--font); color: var(--ink); cursor: pointer; transition: background .2s; }
+.cl-step button:hover { background: #E3F1DE; }
+.cl-step select { height: 40px; border: 0; padding: 0 .4rem; font: 800 1rem var(--font); text-align: center; background: var(--white); color: var(--ink); appearance: none; -webkit-appearance: none; cursor: pointer; font-variant-numeric: tabular-nums; }
+.cl-bar { height: 10px; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.cl-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--lime), var(--green)); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
+.cl-val { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+.cl-raw { display: grid; grid-template-columns: 90px 1fr 70px; gap: .8rem; align-items: center; }
+.cl-raw label { font-weight: 700; font-size: .93rem; }
+.cl-raw input[type=number] { width: 100%; height: 42px; border: 1.5px solid var(--line); border-radius: 10px; text-align: center; font: 800 1rem var(--font); color: var(--ink); background: var(--soft); }
+.cl-raw input[type=number]:focus { outline: none; border-color: var(--green); background: var(--white); }
+.cl-raw input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 999px; background: var(--soft); cursor: pointer; }
+.cl-raw input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--green); border: 3px solid var(--white); box-shadow: 0 2px 8px rgba(15,42,51,.35); transition: transform .2s; }
+.cl-raw input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.cl-raw input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--green); border: 3px solid var(--white); }
+.cl-raw input[type=range]:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+
+.cl-check { display: flex; align-items: center; gap: .6rem; font-weight: 600; cursor: pointer; }
+.cl-check input { width: 18px; height: 18px; accent-color: var(--green); }
+.cl-presets { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-bottom: .8rem; font-size: .88rem; color: var(--muted); }
+.cl-presets button { font: 700 .85rem var(--font); padding: .45rem .8rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--white); cursor: pointer; transition: border-color .2s, background .2s; }
+.cl-presets button:hover { border-color: var(--green); background: #EAF6E6; }
+#pt-one, #pt-each { display: grid; gap: 1rem; }
+#pt-one[hidden], #pt-each[hidden] { display: none; }
+
+/* PTE result */
+.pr-top { display: flex; align-items: center; gap: 1.2rem; }
+.pr-top p { margin-top: .3rem; color: rgba(255,255,255,.85); }
+.pr-ring { --p: 0; flex: none; width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; align-content: center;
+  background: radial-gradient(closest-side, var(--dark) 78%, transparent 80% 100%), conic-gradient(var(--lime) calc(var(--p) * 360deg), rgba(255,255,255,.1) 0); transition: --p .6s; }
+.pr-ring b { font-size: 2rem; font-weight: 900; line-height: 1; }
+.pr-ring span { font-size: .8rem; color: rgba(255,255,255,.6); }
+.pr-row { padding: .8rem 0; border-top: 1px solid rgba(255,255,255,.08); }
+.pr-head { display: grid; grid-template-columns: 1fr auto auto; gap: .8rem; align-items: center; margin-bottom: .55rem; font-weight: 600; }
+.pr-head b { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.pr-status { font-size: .78rem; font-weight: 800; padding: .25rem .6rem; border-radius: 999px; }
+.pr-status.ok { background: rgba(141,198,63,.18); color: var(--lime); }
+.pr-status.need { background: rgba(255,212,59,.16); color: var(--yellow); }
+.pr-track { position: relative; height: 12px; border-radius: 999px; background: rgba(255,255,255,.1); }
+.pr-fill { position: absolute; inset: 0; border-radius: inherit; background: var(--lime); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease), background .3s; }
+.pr-row.short .pr-fill { background: var(--yellow); }
+.pr-target { position: absolute; top: -5px; width: 3px; height: 22px; margin-left: -1.5px; border-radius: 2px; background: var(--white); transition: left .5s var(--ease); box-shadow: 0 0 0 3px rgba(15,42,51,.8); }
+.pr-legend { display: flex; gap: 1.2rem; font-size: .8rem; color: rgba(255,255,255,.65); }
+.pr-legend i { display: inline-block; vertical-align: middle; margin-right: .4rem; }
+.pr-lg-fill { width: 18px; height: 8px; border-radius: 4px; background: var(--lime); }
+.pr-lg-target { width: 3px; height: 14px; background: var(--white); }
+
+.cl-cta { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem 3rem; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .cl-grid { grid-template-columns: 1fr; }
+  .cl-result { position: relative; top: auto; }
+}
+@media (max-width: 480px) {
+  .cl-card, .cl-result { padding: 1.3rem; }
+  .cl-skill { grid-template-columns: 1fr auto; }
+  .cl-skill .cl-bar { grid-column: 1 / -1; order: 3; }
+  .cl-skill .cl-val { display: none; }
+  .cl-raw { grid-template-columns: 1fr 70px; }
+  .cl-raw input[type=range] { grid-column: 1 / -1; order: 3; }
+  .cl-tabs { display: flex; }
+  .cl-tabs button { flex: 1; padding: .7rem .6rem; }
+}

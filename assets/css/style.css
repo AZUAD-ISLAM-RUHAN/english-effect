@@ -408,6 +408,62 @@ img { max-width: 100%; height: auto; display: block; }
   .pkg:hover { transform: none; }
 }
 
+/* ---------- Menu: small dropdowns (Free Tools, About) + FREE chip ---------- */
+.drop-sm .drop-panel { width: 300px; grid-template-columns: 1fr; }
+.chip.c-plain { background: var(--soft); color: var(--green-dk); }
+.chip.c-plain svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.free-chip { display: inline-flex; align-items: center; padding: .12rem .42rem; border-radius: 6px; background: var(--lime); color: var(--dark); font-size: .62rem; font-weight: 800; letter-spacing: .06em; line-height: 1.4; }
+
+/* ---------- Home: Free tools ---------- */
+.tools-sec { padding-bottom: 0; }
+.tool-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.tool-card { position: relative; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "chip prev" "title prev" "text prev" "go prev"; align-content: start; gap: .5rem 1.4rem; min-width: 0; padding: 1.8rem; border-radius: var(--radius); color: var(--white); text-decoration: none; overflow: hidden; transition: var(--card-move); }
+.tool-card::after { content: ""; position: absolute; right: -60px; bottom: -80px; width: 220px; aspect-ratio: 1; border-radius: 50%; border: 28px solid rgba(255,255,255,.07); transition: transform .6s var(--ease); pointer-events: none; }
+.tool-card:hover { transform: var(--card-lift); box-shadow: var(--card-shadow); }
+.tool-card:hover::after { transform: translate(-14px, -10px); }
+.tc-ielts { background: linear-gradient(135deg, #1F6E1A, var(--green)); }
+.tc-pte { background: var(--dark); }
+.tool-card .free-chip { grid-area: chip; justify-self: start; }
+.tool-card h3 { grid-area: title; font-size: 1.35rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.25; }
+.tool-card p { grid-area: text; color: rgba(255,255,255,.78); font-size: .95rem; max-width: 34ch; }
+.tool-go { grid-area: go; display: inline-flex; align-items: center; gap: .45rem; margin-top: .5rem; font-weight: 700; font-size: .92rem; color: var(--lime); }
+.tc-ielts .tool-go { color: var(--yellow); }
+.tool-go svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease); }
+.tool-card:hover .tool-go svg { transform: translateX(4px); }
+.tool-prev { grid-area: prev; align-self: center; position: relative; z-index: 1; width: 128px; height: 112px; border-radius: 16px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); display: grid; place-items: center; align-content: center; }
+.tool-prev small { font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: .04em; }
+.tool-prev b { font-size: 2.9rem; font-weight: 900; line-height: 1; letter-spacing: -.04em; color: var(--white); transition: transform .4s var(--ease); }
+.tool-card:hover .tool-prev b { transform: scale(1.08); }
+.tool-bars { display: flex; align-items: flex-end; justify-content: center; gap: 10px; padding: 16px 18px 14px; }
+.tool-bars i { flex: 1; height: calc(var(--h) * 100%); border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, var(--lime), var(--green)); transform-origin: bottom; transition: transform .45s var(--ease); }
+.tool-bars i:nth-child(3) { background: linear-gradient(180deg, var(--yellow), #E9B500); }
+.tool-card:hover .tool-bars i { transform: scaleY(1.08); }
+.tool-target { position: absolute; left: 12px; right: 12px; top: 34%; border-top: 2px dashed rgba(255,212,59,.85); }
+
+/* ---------- PTE/IELTS page: small link to the calculator ---------- */
+.tool-link { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; padding: 1rem 1.2rem; border-radius: var(--radius); background: var(--white); border: 1px dashed var(--green); text-decoration: none; color: var(--ink); transition: var(--card-move); }
+.tool-link:hover { transform: var(--card-lift); border-style: solid; box-shadow: var(--card-shadow); }
+.tool-link > span:not(.free-chip) { flex: 1; min-width: 0; }
+.tool-link b { display: block; font-weight: 800; }
+.tool-link small { display: block; color: var(--muted); font-size: .9rem; }
+.tool-link i { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--green-dk); }
+.tool-link i svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 860px) {
+  .drop-sm .drop-panel { width: auto; }
+  .drop > button .free-chip { margin: 0 auto 0 .5rem; }  /* keep chip next to the label */
+}
+@media (max-width: 760px) {
+  .tool-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .tool-card { grid-template-columns: 1fr; grid-template-areas: "chip" "prev" "title" "text" "go"; }
+  .tool-prev { width: 100%; height: 96px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-card:hover, .tool-link:hover, .tool-card:hover::after, .tool-card:hover .tool-prev b, .tool-card:hover .tool-bars i, .tool-card:hover .tool-go svg { transform: none; }
+}
+
 /* Lightbox */
 html.lb-open { overflow: hidden; }
 .lightbox { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(8,22,27,.94); color: var(--white); }
@@ -654,10 +710,19 @@ html.ee-bar-open .to-top { bottom: calc(20px + 56px + 12px + 124px + env(safe-ar
   html.ee-bar-open .to-top { bottom: calc(20px + 52px + 12px + 124px + env(safe-area-inset-bottom, 0px)); }
 }
 /* header "Install app" button (shown by install.js). No room in the desktop menu between
-   861px and 1080px, so it is hidden there; the phone menu (860px and below) still has it. */
+   861px and 1100px, so it is hidden there; the phone menu (860px and below) still has it. */
 .menu [data-install-app] { white-space: nowrap; }
-@media (min-width: 861px) and (max-width: 1080px) {
+@media (min-width: 861px) and (max-width: 1100px) {
   html.ee-can-install .menu [data-install-app] { display: none; }
+}
+/* menu labels never wrap; tighter spacing on small laptops/tablets */
+@media (min-width: 861px) {
+  .menu > a:not(.btn), .drop > button { white-space: nowrap; }
+}
+@media (min-width: 861px) and (max-width: 980px) {
+  .menu { gap: .95rem; }
+  .menu > a:not(.btn), .drop > button { font-size: .88rem; }
+  .menu .btn-sm { padding: 0 .95rem; }
 }
 
 /* scroll progress bar */

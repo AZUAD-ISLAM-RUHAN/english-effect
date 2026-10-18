@@ -47,12 +47,20 @@ var SITE = {
               '<a href="kids.html"><span class="chip c-kids">ABC</span><span><b>Kids English</b><small>Stories, phonics</small></span></a>' +
               '<a href="courses.html" style="grid-column:1/-1;justify-content:center;font-weight:700;color:var(--green-dk)">See all courses</a>' +
             '</div></div>' +
-          '<a href="free-class.html" data-nav="free">Free Class</a>' +
-          '<a href="instructor.html" data-nav="instructor">Instructor</a>' +
           '<a href="mock-test.html" data-nav="mock">Mock Test</a>' +
-          '<a href="games.html" data-nav="games">Games</a>' +
-          '<a href="faq.html" data-nav="faq">FAQ</a>' +
-          '<a href="contact.html" data-nav="contact">Contact</a>' +
+          '<div class="drop drop-sm" data-nav="tools"><button type="button" aria-expanded="false">Free Tools <span class="free-chip">FREE</span> <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +
+            '<div class="drop-panel">' +
+              '<a href="ielts-calculator.html"><span class="chip c-ielts">7.0</span><span><b>IELTS Band Calculator</b><small>Overall band from 4 scores</small></span></a>' +
+              '<a href="pte-calculator.html"><span class="chip c-pte">PTE</span><span><b>PTE Score Checker</b><small>Your score vs your target</small></span></a>' +
+              '<a href="games.html"><span class="chip c-kids">PLAY</span><span><b>Practice Games</b><small>Typing test, spelling game</small></span></a>' +
+            '</div></div>' +
+          '<a href="free-class.html" data-nav="free">Free Class</a>' +
+          '<div class="drop drop-sm" data-nav="about"><button type="button" aria-expanded="false">About <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>' +
+            '<div class="drop-panel">' +
+              '<a href="instructor.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/></svg></span><span><b>Instructor</b><small>Ali Jaker Nirob</small></span></a>' +
+              '<a href="faq.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7v.5M12 17h.01M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><span><b>FAQ</b><small>Classes, payment, exams</small></span></a>' +
+              '<a href="contact.html"><span class="chip c-plain"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></span><span><b>Contact</b><small>WhatsApp, email</small></span></a>' +
+            '</div></div>' +
           '<button type="button" class="btn btn-ghost btn-sm" data-install-app>Install app</button>' +  // install.js dekhay/lukay
           '<a href="enroll.html" class="btn btn-green btn-sm">Enroll now</a>' +
         '</nav>' +
@@ -69,7 +77,7 @@ var SITE = {
             '<p class="tagline">Your English Can Take You Further</p>' +
             '<p class="small bn">দেশে ও প্রবাসে বাংলাভাষী student দের জন্য PTE, IELTS আর Spoken English।</p></div>' +
           '<div><h4>Courses</h4><a href="pte.html">PTE Academic</a><a href="ielts.html">IELTS</a><a href="spoken.html">Spoken English</a><a href="kids.html">Kids English</a></div>' +
-          '<div><h4>Learn</h4><a href="free-class.html">Free live class</a><a href="games.html">Practice games</a><a href="instructor.html">Instructor</a><a href="enroll.html">How to enroll</a><a href="faq.html">FAQ</a></div>' +
+          '<div><h4>Learn</h4><a href="free-class.html">Free live class</a><a href="games.html">Practice games</a><a href="ielts-calculator.html">IELTS calculator</a><a href="pte-calculator.html">PTE calculator</a><a href="instructor.html">Instructor</a><a href="enroll.html">How to enroll</a><a href="faq.html">FAQ</a></div>' +
           '<div><h4>Connect</h4><a href="' + SITE.youtube + '" target="_blank" rel="noopener">YouTube</a><a href="' + SITE.facebook + '" target="_blank" rel="noopener">Facebook</a><a href="' + SITE.whatsappGroup + '" target="_blank" rel="noopener">WhatsApp group</a><a href="contact.html">Contact</a></div>' +
         '</div>' +
         '<p class="copy"><span>© ' + new Date().getFullYear() + ' English Effect</span><span>' + SITE.domain + '</span></p>' +
@@ -91,7 +99,7 @@ var SITE = {
   document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = "https://wa.me/" + SITE.whatsappNumber; });
 
   /* ---------- 5. Active menu item ---------- */
-  var map = { home: "home", courses: "courses", pte: "courses", ielts: "courses", spoken: "courses", kids: "courses", free: "free", instructor: "instructor", faq: "faq", contact: "contact", games: "games", typing: "games", kids_game: "games", mock: "mock", module: "courses" };
+  var map = { home: "home", courses: "courses", pte: "courses", ielts: "courses", spoken: "courses", kids: "courses", free: "free", instructor: "about", faq: "about", contact: "about", games: "tools", typing: "tools", kids_game: "tools", tools: "tools", mock: "mock", module: "courses" };
   var act = document.querySelector('[data-nav="' + map[page] + '"]');
   if (act) act.classList.add("active");
 
@@ -105,6 +113,8 @@ var SITE = {
     b.addEventListener("click", function () {
       var d = b.parentNode, open = d.classList.toggle("open");
       b.setAttribute("aria-expanded", open);
+      // ekta khulle onno dropdown bondho
+      if (open) document.querySelectorAll(".drop.open").forEach(function (o) { if (o !== d) { o.classList.remove("open"); o.querySelector("button").setAttribute("aria-expanded", "false"); } });
     });
   });
   document.addEventListener("click", function (e) {

@@ -7,7 +7,13 @@ Audience: Bangla speakers in Bangladesh and abroad. Domain: englisheffectbd.com.
 
 ## Structure
 - One HTML file per page in the root: index, courses, pte, ielts, spoken, kids, free-class,
-  instructor, games, typing, kids-game, mock-test, mock, module, enroll, faq, contact, thanks.
+  instructor, games, typing, kids-game, ielts-calculator, pte-calculator, mock-test, mock, module,
+  enroll, faq, contact, thanks.
+- Menu (main.js): Home | Courses (dropdown) | Mock Test | Free Tools (dropdown: IELTS/PTE
+  calculators, games) | Free Class | About (dropdown: Instructor, FAQ, Contact) | Install app |
+  Enroll now. Active item comes from `data-page` via the `map` in main.js.
+- Calculators: `ielts-calculator.html`, `pte-calculator.html`, logic in `assets/js/calc.js`,
+  styles in `assets/css/calc.css` (`data-page="tools"`).
 - `module.html`: ONE template for every PTE/IELTS package (`module.html?exam=pte&module=writing`).
   Its content comes from `assets/js/courses-data.js` through `assets/js/packages.js`.
 - `assets/css/style.css`: all styles, shared by every page. Brand tokens are in `:root`.
