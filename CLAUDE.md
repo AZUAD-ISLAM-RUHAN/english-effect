@@ -132,5 +132,5 @@ two FAQ answers (verify time, exam registration).
 - The enrollment form (enroll.html) posts to Web3Forms (`https://api.web3forms.com/submit`,
   `access_key` hidden input) and the submission arrives by email. Spam trap: the hidden
   `botcheck` checkbox. Web3Forms then redirects to thanks.html. Free plan: no file uploads.
-  It only really submits on Netlify or the real domain; locally it just goes to thanks.html.
+  It submits from anywhere, including Live Server, so a local test sends a real email.
 - Deploy: push to GitHub; Netlify auto-deploys from the main branch.

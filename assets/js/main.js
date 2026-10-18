@@ -270,18 +270,6 @@ var SITE = {
     });
   });
 
-  /* ---------- 13. Enroll form ----------
-     Netlify te (ba asol domain e) form ta Web3Forms e jabe (email e ashe).
-     Local test (Live Server) ba preview te shudhu thanks page dekhabe, asol email jay na. */
-  var form = document.getElementById("enrollForm");
-  if (form) {
-    var hostOk = /netlify\.app$/.test(location.hostname) || location.hostname.indexOf(SITE.domain) > -1;
-    if (!hostOk) form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (form.checkValidity()) location.href = "thanks.html";
-    });
-  }
-
   /* ---------- 14. Home hero flight ---------- */
   var hero = document.getElementById("hero"), route = document.getElementById("route");
   if (hero && route) {
